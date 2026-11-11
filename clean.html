@@ -385,7 +385,7 @@ button{font-family:inherit}
   .price-cards .price-card .desc,.price-cards .price-card .pc-list{display:none}
   .price-cards .price-card .pc-price{margin:10px 0 0;padding-bottom:0;border-bottom:0}
   .price-cards .price-card .pc-price .k{font-size:12px}
-  .price-cards .price-card .pc-price strong{font-size:26px}
+  .price-cards .price-card .pc-price strong{font-size:min(26px,6.4vw);white-space:nowrap;letter-spacing:-.05em}
   .price-cards .price-card .pc-price .once{font-size:12.5px;margin-top:4px}
 }
 
@@ -604,6 +604,10 @@ button{font-family:inherit}
   sync();update();
 })();
 
+</script>
+<script>
+(function(){function fit(){document.querySelectorAll('.price-cards .pc-price strong').forEach(function(el){el.style.fontSize='';el.style.whiteSpace='nowrap';var f=parseFloat(getComputedStyle(el).fontSize),n=0;while(el.scrollWidth>el.clientWidth+1&&f>12&&n<40){f-=1;el.style.fontSize=f+'px';n++;}});}
+window.addEventListener('load',fit);window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);fit();})();
 </script>
 </body>
 </html>
