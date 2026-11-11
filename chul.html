@@ -264,7 +264,9 @@ footer{background:var(--paper);padding:0 0 26px}
   .fbot{padding:0 4px}
 }
 
-/* PC opt C — process layout (≥981). 721–980 is a 2-col adaptation. Mobile unchanged. */
+</style>
+
+<style id="pc-opt-optC">
 @media (min-width:721px){
   .pgrid .panel::before,
   .pgrid .panel::after{content:none!important;display:none!important}
@@ -274,12 +276,14 @@ footer{background:var(--paper);padding:0 0 26px}
   .pgrid .pcard:hover{transform:none}
   .pgrid .pcard p{max-width:none}
   .pgrid .panel svg{max-width:100%;height:auto}
-  .pgrid .pcard h3{font-size:20px}
-  .pgrid .pcard p{margin-top:8px}
-  .pgrid .pcard .foot{justify-content:flex-end}
+  .pgrid .pcard .foot{display:none}
+  .plink-pc{
+    display:block;position:absolute;left:0;top:0;width:100%;height:100%;
+    pointer-events:none;overflow:visible;z-index:0;
+  }
 }
 
-@media (min-width:981px){
+@media (min-width:721px){
   .pgrid{
     display:grid;
     grid-template-columns:1.12fr 1fr 1fr;
@@ -291,6 +295,7 @@ footer{background:var(--paper);padding:0 0 26px}
   .pgrid .pcard{
     display:flex;padding:16px;min-height:0;height:100%;
   }
+  /* 1: tall feature */
   .pgrid .pcard:nth-of-type(1){
     grid-column:1;grid-row:1 / span 2;flex-direction:column;
   }
@@ -300,6 +305,7 @@ footer{background:var(--paper);padding:0 0 26px}
   .pgrid .pcard:nth-of-type(1) .body{padding:2px 2px 0;flex:none}
   .pgrid .pcard:nth-of-type(1) .foot{margin-top:14px;padding-top:0}
 
+  /* 2, 3: equal-height wide list rows */
   .pgrid .pcard:nth-of-type(2),
   .pgrid .pcard:nth-of-type(3){
     grid-column:2 / span 2;
@@ -320,6 +326,7 @@ footer{background:var(--paper);padding:0 0 26px}
   .pgrid .pcard:nth-of-type(2) .foot,
   .pgrid .pcard:nth-of-type(3) .foot{margin-top:auto;padding-top:10px}
 
+  /* 4, 5, 6: equal compact */
   .pgrid .pcard:nth-of-type(4){grid-column:1;grid-row:3}
   .pgrid .pcard:nth-of-type(5){grid-column:2;grid-row:3}
   .pgrid .pcard:nth-of-type(6){grid-column:3;grid-row:3}
@@ -342,64 +349,57 @@ footer{background:var(--paper);padding:0 0 26px}
   .pgrid .pcard:nth-of-type(4) .foot,
   .pgrid .pcard:nth-of-type(5) .foot,
   .pgrid .pcard:nth-of-type(6) .foot{margin-top:auto;padding-top:12px;justify-content:flex-end}
+
+  .pgrid .pcard h3{font-size:20px}
+  .pgrid .pcard p{margin-top:8px}
+  .pgrid .pcard .foot{justify-content:flex-end}
 }
 
 @media (min-width:721px) and (max-width:980px){
   .pgrid{
-    display:grid;
     grid-template-columns:1fr 1fr;
     grid-template-rows:1fr 1fr auto auto;
-    gap:18px;
-    position:relative;
+    gap:24px;
     align-items:stretch;
-  }
-  .pgrid .pcard{
-    display:flex;padding:16px;min-height:0;height:100%;
   }
   .pgrid .pcard:nth-of-type(1){
     grid-column:1;grid-row:1 / span 2;flex-direction:column;
   }
-  .pgrid .pcard:nth-of-type(1) .panel{
-    flex:1;min-height:0!important;margin:0 0 14px!important;padding:16px;
+  .pgrid .pcard:nth-of-type(2){
+    grid-column:2;grid-row:1;min-height:0;
   }
-  .pgrid .pcard:nth-of-type(1) .body{padding:2px 2px 0;flex:none}
-  .pgrid .pcard:nth-of-type(1) .foot{margin-top:12px;padding-top:0}
-
-  /* 2–6: horizontal list cards so illustrations are not cropped in the 2-col width */
-  .pgrid .pcard:nth-of-type(2),
-  .pgrid .pcard:nth-of-type(3),
-  .pgrid .pcard:nth-of-type(4),
-  .pgrid .pcard:nth-of-type(5),
-  .pgrid .pcard:nth-of-type(6){
-    flex-direction:row;align-items:stretch;gap:14px;
+  .pgrid .pcard:nth-of-type(3){
+    grid-column:2;grid-row:2;min-height:0;
   }
-  .pgrid .pcard:nth-of-type(2){grid-column:2;grid-row:1}
-  .pgrid .pcard:nth-of-type(3){grid-column:2;grid-row:2}
   .pgrid .pcard:nth-of-type(4){grid-column:1;grid-row:3}
   .pgrid .pcard:nth-of-type(5){grid-column:2;grid-row:3}
   .pgrid .pcard:nth-of-type(6){grid-column:1 / span 2;grid-row:4}
+
   .pgrid .pcard:nth-of-type(2) .panel,
-  .pgrid .pcard:nth-of-type(3) .panel,
+  .pgrid .pcard:nth-of-type(3) .panel{
+    width:140px;min-width:140px;
+  }
+
+  .pgrid .pcard:nth-of-type(4),
+  .pgrid .pcard:nth-of-type(5),
+  .pgrid .pcard:nth-of-type(6){
+    flex-direction:row;align-items:stretch;gap:18px;
+    min-height:0;height:auto;
+  }
   .pgrid .pcard:nth-of-type(4) .panel,
   .pgrid .pcard:nth-of-type(5) .panel,
   .pgrid .pcard:nth-of-type(6) .panel{
-    width:140px;min-width:140px;min-height:0!important;height:auto;
+    width:140px;min-width:140px;height:auto;min-height:0!important;
     margin:0!important;flex:none;padding:12px;
   }
-  .pgrid .pcard:nth-of-type(2) .body,
-  .pgrid .pcard:nth-of-type(3) .body,
   .pgrid .pcard:nth-of-type(4) .body,
   .pgrid .pcard:nth-of-type(5) .body,
   .pgrid .pcard:nth-of-type(6) .body{
-    padding:4px 2px 0;display:flex;flex-direction:column;flex:1;min-width:0;
+    padding:6px 2px 0;display:flex;flex-direction:column;flex:1;min-width:0;
   }
-  .pgrid .pcard:nth-of-type(2) .foot,
-  .pgrid .pcard:nth-of-type(3) .foot,
-  .pgrid .pcard:nth-of-type(4) .foot,
-  .pgrid .pcard:nth-of-type(5) .foot,
-  .pgrid .pcard:nth-of-type(6) .foot{margin-top:auto;padding-top:8px;justify-content:flex-end}
   .pgrid .pcard:nth-of-type(4) h3,
-  .pgrid .pcard:nth-of-type(5) h3{font-size:19px}
+  .pgrid .pcard:nth-of-type(5) h3,
+  .pgrid .pcard:nth-of-type(6) h3{font-size:20px;min-height:0}
 }
 
 </style>
@@ -943,6 +943,102 @@ footer{background:var(--paper);padding:0 0 26px}
     path.setAttribute('d',d);
   }
   addEventListener('resize',draw);addEventListener('load',draw);setTimeout(draw,300);setTimeout(draw,1600);draw();
+})();
+</script>
+
+<script>
+(function(){
+  function ready(fn){
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn);
+    else fn();
+  }
+  ready(function(){
+    var g=document.querySelector('.pgrid'); if(!g) return;
+    var NS='http://www.w3.org/2000/svg';
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('class','plink-pc');
+    svg.setAttribute('aria-hidden','true');
+    var path=document.createElementNS(NS,'path');
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke','#0f172955');
+    path.setAttribute('stroke-width','1');
+    path.setAttribute('stroke-linecap','round');
+    path.setAttribute('stroke-linejoin','round');
+    svg.appendChild(path);
+    g.insertBefore(svg,g.firstChild);
+
+    function rect(el,gr){
+      var r=el.getBoundingClientRect();
+      return {l:r.left-gr.left, r:r.right-gr.left, t:r.top-gr.top, b:r.bottom-gr.top,
+              mx:(r.left+r.right)/2-gr.left, my:(r.top+r.bottom)/2-gr.top};
+    }
+    function routeU(x1,y1,x2,y2,yMid){
+      var dx=x2-x1, dy1=yMid-y1, dy2=y2-yMid;
+      var r=Math.min(12, Math.abs(dx)/2, Math.abs(dy1), Math.abs(dy2));
+      if(r<1 || Math.abs(dx)<1){ d+='M'+x1+' '+y1+' V'+y2+' '; return; }
+      var sx=dx>0?1:-1;
+      var sy1=dy1>=0?1:-1;
+      var sy2=dy2>=0?1:-1;
+      d+='M'+x1+' '+y1+' V'+(yMid-sy1*r)+' Q'+x1+' '+yMid+' '+(x1+sx*r)+' '+yMid+' H'+(x2-sx*r)+' Q'+x2+' '+yMid+' '+x2+' '+(yMid+sy2*r)+' V'+y2+' ';
+    }
+    var d='';
+    function connect(ca,cb,a,b){
+      var ovY=Math.min(ca.b,cb.b)-Math.max(ca.t,cb.t);
+      var ovX=Math.min(ca.r,cb.r)-Math.max(ca.l,cb.l);
+      /* same row: horizontal in the gutter, aimed at the panels */
+      if(cb.l>=ca.r-2 && ovY>16){
+        var yTop=Math.max(a.t,b.t), yBot=Math.min(a.b,b.b);
+        var y=(yBot-yTop>16)?(yTop+yBot)/2:((Math.max(ca.t,cb.t)+Math.min(ca.b,cb.b))/2);
+        d+='M'+ca.r+' '+y+' H'+cb.l+' ';
+        return;
+      }
+      if(ca.l>=cb.r-2 && ovY>16){
+        var yTop=Math.max(a.t,b.t), yBot=Math.min(a.b,b.b);
+        var y=(yBot-yTop>16)?(yTop+yBot)/2:((Math.max(ca.t,cb.t)+Math.min(ca.b,cb.b))/2);
+        d+='M'+ca.l+' '+y+' H'+cb.r+' ';
+        return;
+      }
+      /* stacked with card x-overlap: vertical in the gutter */
+      if(cb.t>=ca.b-2 && ovX>16){
+        var xLeft=Math.max(a.l,b.l), xRight=Math.min(a.r,b.r);
+        var x=(xRight-xLeft>16)?(xLeft+xRight)/2:a.mx;
+        x=Math.max(cb.l+8, Math.min(cb.r-8, x));
+        d+='M'+x+' '+ca.b+' V'+cb.t+' ';
+        return;
+      }
+      /* diagonal: come out of A, turn in the gap, land on B */
+      if(cb.t>=ca.b-4){
+        var x1=(cb.mx<ca.mx)?a.l:a.r;
+        var x2=b.mx;
+        var yMid=(ca.b+cb.t)/2;
+        routeU(x1,ca.b,x2,cb.t,yMid);
+        return;
+      }
+      routeU(a.mx,ca.b,b.mx,cb.t,(ca.b+cb.t)/2);
+    }
+    function draw(){
+      if(innerWidth<=720){ path.setAttribute('d',''); svg.style.display='none'; return; }
+      svg.style.display='block';
+      var gr=g.getBoundingClientRect();
+      var cards=[].slice.call(g.querySelectorAll('.pcard'));
+      if(cards.length<6) return;
+      var P=cards.map(function(c){return rect(c.querySelector('.panel'),gr)});
+      var C=cards.map(function(c){return rect(c,gr)});
+      d='';
+      connect(C[0],C[1],P[0],P[1]);
+      connect(C[1],C[2],P[1],P[2]);
+      connect(C[2],C[3],P[2],P[3]);
+      connect(C[3],C[4],P[3],P[4]);
+      connect(C[4],C[5],P[4],P[5]);
+      path.setAttribute('d',d);
+    }
+    addEventListener('resize',draw);
+    addEventListener('load',draw);
+    setTimeout(draw,80);
+    setTimeout(draw,400);
+    setTimeout(draw,1600);
+    draw();
+  });
 })();
 </script>
 </body>
