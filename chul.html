@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>철거해드릴께요 | 덜어드림</title>
+<meta name="description" content="덜어드림 철거해드릴께요. 인테리어 철거부터 건물 완파, 원상복구, 남은 짐 처리까지 깔끔하게 마무리해요. 카톡으로 사진과 지역을 보내 주세요.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#0f1729; --ink2:#334155; --mut:#64748b; --line:#dbeafe;
+  --b9:#1e2f8f; --b7:#2447d6; --b5:#3b82f6; --b3:#93c5fd; --sky:#bfe9ff; --ice:#eef8ff;
+  --paper:#f0faff; --paper2:#eaf7ff; --card:#fff;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.w{max-width:1040px;margin:0 auto;padding:0 24px}
+.h-xl{font-size:clamp(34px,5.4vw,60px);font-weight:800;letter-spacing:-.035em;line-height:1.12}
+.h-l{font-size:clamp(28px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.18}
+.h-m{font-size:clamp(22px,2.4vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.25}
+.lead{font-size:clamp(15px,1.5vw,17px);color:var(--ink2);line-height:1.65;text-wrap:balance}
+.center{text-align:center}
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:8px;font-weight:700;font-size:15px;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap;font-family:inherit;cursor:pointer;border:0}
+.btn .ar{transition:transform .2s}.btn:hover .ar{transform:translateX(3px)}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:#000;box-shadow:0 8px 20px #0f172933}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink);background:#ffffff80}.btn-line:hover{background:#fff}
+.btn-white{background:#fff;color:var(--ink)}
+.icon-btn{width:36px;height:36px;border-radius:8px;background:var(--ink);color:#fff;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:transform .2s}
+.icon-btn:hover{transform:translateX(3px)}
+
+/* header — same structure as move.html, readable on a light page */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+header.solid{background:#1e2f8fee;backdrop-filter:blur(10px);box-shadow:0 4px 20px #0f172922}
+.nav{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;gap:28px}
+.logo{font-weight:900;font-size:24px;letter-spacing:-.04em;color:#fff;display:flex;align-items:center;gap:8px}
+.logo i{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#7dd3fc,#fff);display:inline-block;transform:rotate(12deg)}
+.menu{display:flex;gap:26px;font-size:15px;font-weight:600;color:#fff}
+.menu a{opacity:.92}.menu a:hover{opacity:1}
+.menu .dd::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(45deg) translate(-2px,-2px);margin-left:8px}
+.nav-r{margin-left:auto;display:flex;align-items:center;gap:18px}
+.nav-r .btn{height:40px;padding:0 16px;font-size:14px}
+header .btn-dark{background:#fff;color:var(--ink)}
+header .btn-dark:hover{background:#fff;box-shadow:0 8px 20px #0f172933}
+.burger{display:none;width:40px;height:40px;border-radius:8px;border:1.5px solid #ffffff99;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:16px;height:2px;background:#fff;position:relative;content:""}
+.burger span::before{position:absolute;top:-5px}.burger span::after{position:absolute;top:5px}
+
+/* editorial hero */
+.hero-page{position:relative;padding:136px 0 72px;background:linear-gradient(180deg,#2447d6 0%,#3566e6 22%,#4f8ff3 42%,#a9e4ff 66%,#f0faff 100%);overflow:hidden}
+.hero-split{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero-txt{text-align:left;margin-top:0}
+.hero-txt h1{color:#fff}
+.hero-txt .lead{max-width:460px;margin:18px 0 28px;color:#f0faff}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.hero-page .btn-line{border-color:#fff;color:#1e2f8f;background:#fff}
+.hero-page .btn-line:hover{background:#eef4ff}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:#fff;background:#ffffff26;border:1px solid #ffffff55;padding:6px 14px;border-radius:999px;margin-bottom:18px;backdrop-filter:blur(6px)}
+.kicker::before{content:"";width:8px;height:8px;border-radius:3px;background:#7dd3fc}
+.hero-frame{background:var(--card);border:1px solid #dbeafe;border-radius:22px;padding:14px;box-shadow:0 18px 40px #1e40af1f;overflow:hidden}
+.hero-frame .panel{border-radius:14px;min-height:0;aspect-ratio:520/250;margin:0;align-items:stretch;padding:0}
+.hero-frame svg{width:100%;height:100%}
+
+.eyebrow{display:inline-block;font-size:13.5px;font-weight:800;color:var(--b7);background:#eef8ff;border:1px solid #dbeafe;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.sec-head{max-width:620px;margin:0 auto 40px;text-align:center}
+.sec-head .lead{margin-top:14px}
+
+/* scope cards */
+.d-scope{padding:40px 0 80px;background:var(--paper)}
+.sgrid3{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.scard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 18px;transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column;gap:12px}
+.scard:hover{box-shadow:0 14px 30px #1e40af14;transform:translateY(-3px)}
+.scard .ic{height:120px;border-radius:12px;background:linear-gradient(160deg,#eef8ff,#dbeafe);display:flex;align-items:flex-end;justify-content:center;padding:8px 16px 0;overflow:hidden}
+.scard .ic svg{width:100%;max-width:200px;height:auto}
+.scard h3{font-size:18px;font-weight:800;letter-spacing:-.03em}
+.scard p{font-size:14.5px;color:var(--ink2);margin-top:-2px}
+
+/* situations */
+.d-sit{padding:8px 0 72px;background:var(--paper)}
+.sit-band{max-width:760px;margin:0 auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:36px 40px;box-shadow:0 10px 30px #1e40af0d}
+.sit-band h2{margin-bottom:12px}
+.sit-band .lead{margin:0 auto;max-width:520px}
+
+
+/* review photos */
+.d-rev{padding:20px 0 80px;background:var(--paper)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 12px 16px;box-shadow:0 10px 30px #1e40af0d;transition:box-shadow .3s,transform .3s}
+.rcard:hover{box-shadow:0 14px 30px #1e40af14;transform:translateY(-3px)}
+.rpair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rph{position:relative;aspect-ratio:4/3;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;padding:28px 8px 10px}
+.rph.before{background:linear-gradient(160deg,#dbeafe,#bfdbfe)}
+.rph.after{background:linear-gradient(160deg,#eef6ff,#dbeafe)}
+.rph svg{width:28px;height:28px;color:#1e2f8f;opacity:.55}
+.rph em{font-style:normal;font-size:12px;font-weight:700;color:#64748b;letter-spacing:-.02em}
+.rph .tag{position:absolute;top:8px;left:8px;font-size:11px;font-weight:800;color:var(--b9);background:#eef8ffee;border:1px solid #dbeafe;border-radius:999px;padding:3px 8px}
+.rcap{margin-top:12px;font-size:14.5px;font-weight:700;letter-spacing:-.02em;color:var(--ink);padding:0 4px}
+/* process: same language as index 신청방법 */
+.proc{padding:90px 0;background:linear-gradient(180deg,#eaf7ff 0%,#f0faff 40%,#f7fcff 100%)}
+.proc-head{max-width:620px;margin:0 auto 56px;text-align:center}
+.proc-head .lead{margin-top:16px}
+.flow{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:-26px 0 40px;list-style:none}
+.flow li{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--ink2);background:#eef8ff;border:1px solid #dbeafe;border-radius:999px;padding:7px 14px 7px 8px}
+.flow li b{width:22px;height:22px;border-radius:50%;background:var(--b7);color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center}
+.flow li+li::before{content:"→";color:var(--b5);margin:0 6px 0 -2px;font-weight:800}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s}
+.pcard:hover{box-shadow:0 18px 40px #1e40af14;transform:translateY(-3px)}
+.pcard.big{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pcard .body{padding:6px 6px 4px;display:flex;flex-direction:column;flex:1}
+.step{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--b7);letter-spacing:.02em;margin-bottom:10px}
+.step b{width:26px;height:26px;border-radius:50%;background:var(--b7);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.pcard h3{font-size:21px;font-weight:800;letter-spacing:-.03em;line-height:1.3}
+.pcard p{font-size:15px;color:var(--ink2);margin-top:10px;max-width:280px}
+.pcard .foot{margin-top:auto;padding-top:18px;display:flex;justify-content:flex-end}
+.checks{list-style:none;margin:20px 0 26px;display:grid;gap:12px}
+.checks li{display:flex;gap:10px;font-size:14.5px;color:var(--ink2);align-items:flex-start}
+.checks li::before{content:"";flex:none;width:20px;height:20px;border-radius:5px;background:#eef2ff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%232447d6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat;margin-top:1px}
+.pcard.big .btn{align-self:flex-start;margin-top:auto}
+.panel{position:relative;border-radius:12px;min-height:190px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:22px}
+.pcard:not(.big) .panel{margin-bottom:18px}
+.pcard.big .panel{min-height:340px}
+.panel svg{width:100%;max-width:240px;height:auto;position:relative;z-index:1}
+.g1{background:linear-gradient(180deg,#a5f3fc 0%,#38bdf8 55%,#2563eb 100%)}
+.g2{background:linear-gradient(160deg,#c7d2fe,#818cf8)}
+.g3{background:linear-gradient(160deg,#d9f99d,#7dd3fc)}
+.g4{background:linear-gradient(160deg,#bae6fd,#3b82f6)}
+.g5{background:linear-gradient(160deg,#e0e7ff,#a5b4fc 60%,#60a5fa)}
+.g6{background:linear-gradient(160deg,#bae6fd,#7dd3fc 55%,#38bdf8)}
+
+/* cost */
+.d-cost{padding:20px 0 90px;background:var(--paper)}
+.cost-box{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;border-radius:22px;padding:clamp(28px,4vw,44px);background:var(--card);border:1px solid var(--line);box-shadow:0 10px 30px #1e40af0d}
+.cost-box .ci{width:120px;height:120px}
+.cost-box h2{margin-bottom:12px}
+.cost-box p{font-size:clamp(15px,1.5vw,17px);color:var(--ink2);line-height:1.7}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:13.5px;font-weight:700;color:#1d4ed8;background:#fff;border:1px solid #dbeafe;padding:6px 12px;border-radius:999px}
+
+/* faq */
+.faq{padding:100px 0;background:#eaf7ff}
+.faq .w{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:start}
+.acc{display:grid;gap:10px}
+.acc details{background:#ffffffcc;border:1px solid #dbeafe;border-radius:12px;padding:0 18px;transition:border-color .2s}
+.acc details[open]{border-color:var(--b7);background:#fff}
+.acc summary{list-style:none;cursor:pointer;padding:17px 0;font-weight:700;font-size:15.5px;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-size:22px;font-weight:400;line-height:1;transition:transform .2s}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc details p{padding:0 0 18px;font-size:14.5px;color:var(--ink2)}
+
+/* other services */
+.d-other{padding:90px 0 70px;background:var(--paper)}
+.d-other .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 20px 0;min-height:260px;overflow:hidden;box-shadow:0 1px 0 #fff inset,0 10px 30px #1e40af0d;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #1e40af1f}
+.svc-card h3{font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.3}
+.svc-card p{font-size:14.5px;color:var(--ink2);margin-top:10px;line-height:1.6}
+.svc-card p .ln{display:block}
+.svc-card .ill{margin-top:auto;margin-left:auto;margin-right:-6px;width:78%;max-width:170px}
+.svc-card .ill svg{width:100%;height:auto}
+
+/* final cta + footer: same site chrome as move.html */
+.final{padding:20px 0 70px;background:var(--paper)}
+.fbox{border-radius:22px;padding:clamp(40px,6vw,72px) clamp(28px,6vw,72px);background:linear-gradient(135deg,#1e2f8f 0%,#2447d6 55%,#38bdf8 120%);color:#fff;position:relative;overflow:hidden}
+.fbox h2{font-size:clamp(32px,5vw,54px);font-weight:900;letter-spacing:-.04em;line-height:1.12;max-width:520px}
+.fbox .cta-row{justify-content:flex-start;margin-top:32px}
+.fbox .deco{position:absolute;right:-30px;bottom:-30px;width:300px;opacity:.9}
+footer{background:var(--paper);padding:0 0 26px}
+.fin{max-width:1200px;margin:0 auto;padding:0 24px}
+.fdark{background:#0f1a3d;color:#cbd5e1;border-radius:20px;padding:48px 44px;display:grid;grid-template-columns:1.3fr 2fr;gap:30px}
+.fdark .big{font-weight:900;font-size:clamp(46px,7vw,84px);letter-spacing:-.06em;color:#fff;line-height:1}
+.fdark .tg{margin-top:12px;font-size:15px;color:#93c5fd}
+.fcols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fcols h4{color:#fff;font-size:14px;margin-bottom:12px}
+.fcols a{display:block;font-size:13.5px;padding:4px 0;color:#cbd5e1}.fcols a:hover{color:#fff}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--mut);margin-top:18px;padding:0 4px}
+
+.how-foot{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.how-foot .hf-txt{display:flex;flex-direction:column;gap:2px}
+.how-foot .hf-txt span{font-size:14.5px;font-weight:600;color:var(--ink2)}
+.how-foot .hf-txt strong{font-size:16.5px;font-weight:800;color:var(--b7);letter-spacing:-.02em}
+.foot-btns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+.shot .rv{opacity:1!important;transform:none!important;transition:none!important}
+
+@media (max-width:980px){
+  .menu{display:none}.burger{display:inline-flex}
+  .hero-split{grid-template-columns:1fr;gap:28px}
+  .hero-txt{text-align:center}
+  .hero-txt .lead{margin-left:auto;margin-right:auto}
+  .cta-row{justify-content:center}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .pcard.big{grid-column:span 2}
+  .sgrid3{grid-template-columns:1fr 1fr}
+  .faq .w{grid-template-columns:1fr}
+  .d-other .svc-grid{grid-template-columns:1fr 1fr}
+  .fdark{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .w{padding:0 18px}
+  .nav{height:60px;padding:0 18px}
+  .hero-page{padding:108px 0 40px}
+  .kicker{font-size:13px}
+  .hero-frame{padding:14px 14px 0}
+  .hero-frame .panel{min-height:200px}
+  .d-scope,.d-other{padding:48px 0 56px}
+  .d-sit{padding:0 0 48px}
+  .sit-band{padding:28px 20px}
+  .d-rev{padding:8px 0 56px}
+  .rgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px;padding-right:18px;scrollbar-width:none}
+  .rgrid::-webkit-scrollbar{display:none}
+  .rcard{flex:0 0 80%;max-width:300px;scroll-snap-align:start;transform:none}
+  .rcard:hover{transform:none}
+  .d-cost{padding:0 0 56px}
+  .proc{padding:64px 0}
+  .proc-head{margin-bottom:34px}
+  .sec-head{margin-bottom:28px}
+  .sgrid3{grid-template-columns:1fr;gap:12px}
+  .pgrid{grid-template-columns:1fr;gap:16px}
+  .pcard.big{grid-column:1 / -1!important;display:flex;flex-direction:column;gap:0}
+  .pcard .body{order:-1}
+  .pcard .panel{min-height:170px;margin:16px 0 0!important}
+  .pcard .foot{display:none}
+  .pcard{padding:16px}
+  .pcard h3{font-size:19px}
+  .pcard p{max-width:none}
+  .flow{display:grid;grid-template-columns:1fr;gap:6px;margin:-10px auto 26px;max-width:300px}
+  .flow li+li::before{content:none}
+  .cost-box{grid-template-columns:1fr;gap:16px}
+  .cost-box .ci{width:84px;height:84px}
+  .faq{padding:64px 0}
+  .d-other .svc-grid{grid-template-columns:1fr}
+  .svc-card{min-height:230px}
+  .how-foot{flex-direction:column;align-items:stretch}
+  .how-foot .btn{width:100%;justify-content:center}
+  .fbot{padding:0 4px}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="nav">
+    <a class="logo" href="index.html"><i></i>덜어드림</a>
+    <nav class="menu">
+      <a class="dd" href="index.html#svc">서비스</a>
+      <a href="index.html#proc">신청 방법</a>
+      <a href="index.html#faq">자주 묻는 질문</a>
+    </nav>
+    <div class="nav-r">
+      <a class="btn btn-dark" href="#consult">카톡 상담 <span class="ar">→</span></a>
+      <a class="burger" href="index.html#svc" aria-label="메뉴"><span></span></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-page" id="top">
+  <div class="w hero-split">
+    <div class="hero-txt">
+      <span class="kicker rv">가게·사무실을 비울 때</span>
+      <h1 class="h-xl rv">철거해드릴께요</h1>
+      <p class="lead rv d1">인테리어 철거부터 건물 완파, 원상복구, 남은 짐 처리까지 깔끔하게 마무리해요.</p>
+      <div class="cta-row rv d2">
+        <a class="btn btn-dark" href="#how">신청 방법 보기 <span class="ar">→</span></a>
+        <a class="btn btn-line" href="#cost">비용 안내</a>
+      </div>
+    </div>
+    <div class="hero-frame rv d3">
+      <div class="panel" style="background:linear-gradient(180deg,#eef8ff 0%,#dbeafe 55%,#bfdbfe 100%)">
+        <svg viewBox="0 0 520 250" aria-label="인테리어 철거 후 원상복구하는 일러스트" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="8" y="214" width="504" height="28" rx="8" fill="#dbeafe"/>
+          <rect x="24" y="48" width="52" height="24" rx="4" fill="#e8735a"/>
+          <rect x="84" y="48" width="52" height="24" rx="4" fill="#f08e74"/>
+          <rect x="24" y="80" width="26" height="24" rx="4" fill="#d9604a"/>
+          <rect x="58" y="80" width="52" height="24" rx="4" fill="#e8735a"/>
+          <rect x="24" y="112" width="52" height="24" rx="4" fill="#f7b5a3"/>
+          <rect x="24" y="144" width="26" height="24" rx="4" fill="#f08e74"/>
+          <rect x="58" y="144" width="52" height="24" rx="4" fill="#d9604a"/>
+          <rect x="24" y="176" width="52" height="24" rx="4" fill="#e8735a"/>
+          <rect x="84" y="176" width="26" height="24" rx="4" fill="#f08e74"/>
+          <rect x="122" y="188" width="26" height="18" rx="4" transform="rotate(-16 135 197)" fill="#f08e74"/>
+          <rect x="158" y="196" width="20" height="14" rx="4" transform="rotate(18 168 203)" fill="#f7b5a3"/>
+          <path d="M210 40l-70 70" stroke="#1e2f8f" stroke-width="12"/>
+          <rect x="176" y="14" width="52" height="26" rx="6" fill="#2447d6" transform="rotate(45 202 27)"/>
+          <path d="M112 112l10-10M130 136l12-4M96 94l4-12" stroke="#38bdf8" stroke-width="4"/>
+          <path d="M214 132h70m-14-16 16 16-16 16" fill="none" stroke="#2447d6" stroke-width="8"/>
+          <rect x="306" y="48" width="196" height="166" rx="12" fill="#eef8ff"/>
+          <path d="M306 48h196" stroke="#1e2f8f" stroke-width="5"/>
+          <rect x="328" y="72" width="50" height="40" rx="6" fill="#fff"/>
+          <path d="M353 72v40M328 92h50" stroke="#93c5fd" stroke-width="3.5"/>
+          <rect x="386" y="150" width="32" height="64" rx="6" fill="#2447d6"/>
+          <path d="M488 28l4.2 9.2 9.2 4.2-9.2 4.2-4.2 9.2-4.2-9.2-9.2-4.2 9.2-4.2z" fill="#38bdf8"/>
+          <path d="M28 22l3.6 4.4 4.4 3.6-4.4 3.6-3.6 4.4-4.4-3.6 4.4-3.6 3.6-4.4z" fill="#fff" stroke="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE -->
+<section class="d-scope" id="scope">
+  <div class="w">
+    <div class="sec-head">
+      <span class="eyebrow rv">철거해드릴께요</span>
+      <h2 class="h-l rv">철거부터 마무리까지 맡겨 주세요</h2>
+      <p class="lead rv d1">인테리어 철거부터 건물 완파, 원상복구, 남은 짐 처리까지 깔끔하게 마무리해요.</p>
+    </div>
+    <div class="sgrid3">
+      <article class="scard rv">
+        <div class="ic"><svg viewBox="0 0 200 110" aria-hidden="true" fill="none" stroke-linecap="round">
+          <rect x="8" y="92" width="184" height="14" rx="5" fill="#dbeafe"/>
+          <rect x="20" y="24" width="36" height="16" rx="2" fill="#e8735a"/><rect x="62" y="24" width="36" height="16" rx="2" fill="#f08e74"/>
+            <rect x="20" y="46" width="16" height="16" rx="2" fill="#d9604a"/><rect x="42" y="46" width="36" height="16" rx="2" fill="#f7b5a3"/>
+            <rect x="20" y="68" width="36" height="16" rx="2" fill="#e8735a"/><rect x="20" y="88" width="16" height="8" rx="2" fill="#f08e74"/><rect x="42" y="88" width="36" height="8" rx="2" fill="#d9604a"/>
+            <rect x="108" y="78" width="18" height="12" rx="2" transform="rotate(-14 117 84)" fill="#f08e74"/>
+            <rect x="130" y="84" width="14" height="10" rx="2" transform="rotate(18 137 89)" fill="#f7b5a3"/>
+          <path d="M168 16l-50 50" stroke="#1e2f8f" stroke-width="8"/>
+          <rect x="144" y="4" width="34" height="18" rx="4" fill="#2447d6" transform="rotate(45 161 13)"/>
+          <path d="M104 48l6-6M112 62l8-2" stroke="#38bdf8" stroke-width="3.5"/>
+        </svg></div>
+        <h3>인테리어 철거</h3>
+        <p>가게·사무실의 인테리어를 철거해 드려요.</p>
+      </article>
+      <article class="scard rv d1">
+        <div class="ic"><svg viewBox="0 0 200 110" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="8" y="92" width="184" height="14" rx="5" fill="#dbeafe"/>
+          <ellipse cx="70" cy="98" rx="26" ry="7" fill="#e2e8f0" opacity=".95"/>
+          <ellipse cx="96" cy="99" rx="16" ry="5.5" fill="#fff" opacity=".9"/>
+          <ellipse cx="50" cy="99" rx="12" ry="4.5" fill="#f7b5a3" opacity=".35"/>
+          <g transform="rotate(-8 84 92)">
+            <rect x="56" y="38" width="56" height="54" rx="4" fill="#2447d6"/>
+            <rect x="62" y="46" width="14" height="11" rx="2" fill="#eef8ff"/>
+            <rect x="86" y="46" width="14" height="11" rx="2" fill="#bae6fd"/>
+            <rect x="62" y="64" width="14" height="11" rx="2" fill="#bae6fd"/>
+            <rect x="86" y="64" width="14" height="11" rx="2" fill="#eef8ff"/>
+            <rect x="77" y="78" width="14" height="14" rx="2" fill="#1e2f8f"/>
+            <rect x="56" y="16" width="28" height="24" rx="3" fill="#3b82f6"/>
+            <rect x="62" y="22" width="14" height="11" rx="2" fill="#eef8ff"/>
+          </g>
+          <g transform="rotate(-28 118 22)">
+            <rect x="86" y="8" width="34" height="24" rx="3" fill="#3b82f6"/>
+            <rect x="94" y="14" width="14" height="11" rx="2" fill="#bae6fd"/>
+          </g>
+          <rect x="128" y="34" width="16" height="10" rx="2" fill="#e8735a" transform="rotate(16 136 39)"/>
+          <rect x="146" y="50" width="14" height="12" rx="2" fill="#60a5fa" transform="rotate(24 153 56)"/>
+          <rect x="132" y="58" width="12" height="8" rx="2" fill="#f08e74" transform="rotate(-18 138 62)"/>
+          <rect x="152" y="70" width="16" height="10" rx="2" fill="#d9604a" transform="rotate(12 160 75)"/>
+          <rect x="124" y="76" width="11" height="7" rx="2" fill="#f7b5a3" transform="rotate(-20 129 79)"/>
+          <circle cx="140" cy="46" r="4" fill="#fff" opacity=".8"/>
+          <circle cx="158" cy="64" r="3" fill="#e0f2fe" opacity=".85"/>
+        </svg></div>
+        <h3>건물 완파</h3>
+        <p>건물 전체를 허물고 터를 깨끗하게 정리해요.</p>
+      </article>
+      <article class="scard rv d1">
+        <div class="ic"><svg viewBox="0 0 200 110" aria-hidden="true" fill="none" stroke-linecap="round">
+          <rect x="8" y="92" width="184" height="14" rx="5" fill="#dbeafe"/>
+          <rect x="44" y="28" width="112" height="64" rx="8" fill="#eef8ff"/>
+          <path d="M44 28h112" stroke="#1e2f8f" stroke-width="4"/>
+          <rect x="58" y="40" width="28" height="22" rx="4" fill="#fff"/>
+          <path d="M72 40v22M58 51h28" stroke="#93c5fd" stroke-width="2.5"/>
+          <rect x="92" y="62" width="18" height="30" rx="3" fill="#2447d6"/>
+          <path d="M164 18l3.2 7 7 3.2-7 3.2-3.2 7-3.2-7-7-3.2 7-3.2z" fill="#38bdf8"/>
+        </svg></div>
+        <h3>원상복구</h3>
+        <p>철거한 자리를 깔끔하게 원상복구해 드려요.</p>
+      </article>
+      <article class="scard rv d2">
+        <div class="ic"><svg viewBox="0 0 200 110" aria-hidden="true" fill="none" stroke-linecap="round">
+          <rect x="8" y="92" width="184" height="14" rx="5" fill="#dbeafe"/>
+          <rect x="36" y="48" width="44" height="44" rx="5" fill="#60a5fa"/>
+          <path d="M36 62h44" stroke="#1e2f8f" stroke-width="3"/>
+          <rect x="70" y="32" width="40" height="36" rx="5" fill="#93c5fd"/>
+          <path d="M70 46h40" stroke="#2447d6" stroke-width="3"/>
+          <path d="M122 58h28m0 0-10-10m10 10-10 10" fill="none" stroke="#2447d6" stroke-width="5"/>
+          <path d="M168 28l3 6.5 6.5 3-6.5 3-3 6.5-3-6.5-6.5-3 6.5-3z" fill="#38bdf8"/>
+        </svg></div>
+        <h3>남은 짐 처리</h3>
+        <p>남은 짐 처리까지 함께 맡겨 주세요.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SITUATIONS -->
+<section class="d-sit" id="use">
+  <div class="w">
+    <div class="sit-band rv">
+      <h2 class="h-l">이럴 때 불러 주세요</h2>
+      <p class="lead">가게·사무실을 비울 때, 인테리어 철거부터 건물 완파, 원상복구, 남은 짐 처리까지 맡겨 주세요.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- REVIEW PHOTOS -->
+<section class="d-rev" id="review">
+  <div class="w">
+    <div class="sec-head">
+      <span class="eyebrow rv">후기</span>
+      <h2 class="h-l rv">후기 사진</h2>
+      <p class="lead rv d1">작업 전후 사진을 이 자리에 넣을 예정이에요.</p>
+    </div>
+    <div class="rgrid rv">
+      <article class="rcard">
+        <div class="rpair">
+          <div class="rph before"><span class="tag">철거 전</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="9" cy="12" r="2.2"/><path d="M12.5 17 15 14.5l3.5 3.5"/><path d="M8 4h3"/></svg><em>사진 들어갈 자리</em></div>
+          <div class="rph after"><span class="tag">철거 후</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="9" cy="12" r="2.2"/><path d="M12.5 17 15 14.5l3.5 3.5"/><path d="M8 4h3"/></svg><em>사진 들어갈 자리</em></div>
+        </div>
+        <p class="rcap">상가 철거 · 원상복구</p>
+      </article>
+      <article class="rcard d1">
+        <div class="rpair">
+          <div class="rph before"><span class="tag">철거 전</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="9" cy="12" r="2.2"/><path d="M12.5 17 15 14.5l3.5 3.5"/><path d="M8 4h3"/></svg><em>사진 들어갈 자리</em></div>
+          <div class="rph after"><span class="tag">철거 후</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="9" cy="12" r="2.2"/><path d="M12.5 17 15 14.5l3.5 3.5"/><path d="M8 4h3"/></svg><em>사진 들어갈 자리</em></div>
+        </div>
+        <p class="rcap">사무실 철거 · 원상복구</p>
+      </article>
+      <article class="rcard d2">
+        <div class="rpair">
+          <div class="rph before"><span class="tag">철거 전</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="9" cy="12" r="2.2"/><path d="M12.5 17 15 14.5l3.5 3.5"/><path d="M8 4h3"/></svg><em>사진 들어갈 자리</em></div>
+          <div class="rph after"><span class="tag">철거 후</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="9" cy="12" r="2.2"/><path d="M12.5 17 15 14.5l3.5 3.5"/><path d="M8 4h3"/></svg><em>사진 들어갈 자리</em></div>
+        </div>
+        <p class="rcap">가게 철거 · 남은 짐 처리</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW: index 신청방법 card language -->
+<section class="proc" id="how">
+  <div class="w">
+    <div class="proc-head">
+      <span class="eyebrow rv">신청 방법</span>
+      <h2 class="h-l rv">신청부터 마무리까지,<br>이렇게 진행돼요.</h2>
+      <p class="lead rv d1">카톡으로 사진만 보내 주세요. 그다음 수고는 저희 몫이에요.</p>
+    </div>
+    <ol class="flow rv d2" aria-label="진행 순서">
+      <li><b>1</b>카톡으로 사진·지역</li><li><b>2</b>전화상담</li><li><b>3</b>방문 견적</li><li><b>4</b>날짜 예약</li><li><b>5</b>방문 작업</li><li><b>6</b>마무리 확인</li>
+    </ol>
+    <div class="pgrid">
+      <article class="pcard rv">
+        <div class="panel g1">
+          <svg viewBox="0 0 200 140" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="70" y="8" width="60" height="108" rx="12" fill="#1e2f8f"/>
+            <rect x="76" y="18" width="48" height="84" rx="5" fill="#fff"/>
+            <rect x="82" y="26" width="36" height="28" rx="4" fill="#93c5fd"/>
+            <path d="M82 48l10-10 8 6 6-5 12 9v8H82z" fill="#2447d6"/>
+            <path d="M86 66h28M86 76h18" stroke="#cbd5e1" stroke-width="4"/>
+            <rect x="18" y="70" width="44" height="34" rx="6" fill="#fff" transform="rotate(-8 40 87)"/>
+            <rect x="24" y="76" width="32" height="22" rx="3" fill="#bae6fd" transform="rotate(-8 40 87)"/>
+            <rect x="138" y="76" width="44" height="34" rx="6" fill="#fff" transform="rotate(8 160 93)"/>
+            <rect x="144" y="82" width="32" height="22" rx="3" fill="#c7d2fe" transform="rotate(8 160 93)"/>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="step"><b>1</b>STEP 1</span>
+          <h3>카톡으로 사진·지역 보내기</h3>
+          <p>철거할 곳의 사진과 지역을 카톡으로 보내 주세요.</p>
+          <div class="foot"><a class="icon-btn" href="#consult" aria-label="상담하기">→</a></div>
+        </div>
+      </article>
+      <article class="pcard rv d1">
+        <div class="panel g2">
+          <svg viewBox="0 0 200 140" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M68 38c18-8 46-8 64 0" stroke="#fff" stroke-width="5" opacity=".7"/>
+            <path d="M76 52c12-6 36-6 48 0" stroke="#fff" stroke-width="4" opacity=".55"/>
+            <rect x="84" y="58" width="32" height="56" rx="10" fill="#fff"/>
+            <rect x="90" y="66" width="20" height="32" rx="4" fill="#bfdbfe"/>
+            <path d="M96 108h8" stroke="#2447d6" stroke-width="3"/>
+            <path d="M54 78h16M130 78h16" stroke="#fff" stroke-width="5"/>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="step"><b>2</b>STEP 2</span>
+          <h3>전문 매니저와 전화상담</h3>
+          <p>사진을 보고, 전문 매니저와 전화로 자세히 상담해요.</p>
+          <div class="foot"><a class="icon-btn" href="#consult" aria-label="상담하기">→</a></div>
+        </div>
+      </article>
+      <article class="pcard rv d2">
+        <div class="panel g3">
+          <svg viewBox="0 0 200 140" aria-hidden="true" fill="none" stroke-linecap="round">
+            <rect x="18" y="112" width="164" height="14" rx="5" fill="#93c5fd"/>
+            <path d="M28 112 V70 l32-24 32 24 v42z" fill="#60a5fa"/>
+            <path d="M24 72 L60 44l36 28" fill="none" stroke="#1e2f8f" stroke-width="4"/>
+            <rect x="50" y="86" width="20" height="26" rx="3" fill="#1e2f8f"/>
+            <rect x="108" y="48" width="64" height="64" rx="8" fill="#fff"/>
+            <path d="M108 62h64" stroke="#2447d6" stroke-width="8"/>
+            <rect x="118" y="74" width="28" height="8" rx="3" fill="#e2e8f0"/>
+            <rect x="118" y="88" width="40" height="8" rx="3" fill="#c7d2fe"/>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="step"><b>3</b>STEP 3</span>
+          <h3>실제 방문 견적 안내</h3>
+          <p>현장에 방문해 견적을 안내해 드려요.</p>
+          <div class="foot"><a class="icon-btn" href="#consult" aria-label="상담하기">→</a></div>
+        </div>
+      </article>
+      <article class="pcard rv">
+        <div class="panel g4">
+          <svg viewBox="0 0 200 140" aria-hidden="true" fill="none">
+            <rect x="30" y="18" width="140" height="104" rx="12" fill="#fff"/>
+            <rect x="30" y="18" width="140" height="22" rx="12" fill="#2447d6"/>
+            <g fill="#e2e8f0">
+              <rect x="46" y="52" width="18" height="16" rx="3"/><rect x="70" y="52" width="18" height="16" rx="3"/><rect x="94" y="52" width="18" height="16" rx="3"/><rect x="118" y="52" width="18" height="16" rx="3"/>
+              <rect x="46" y="74" width="18" height="16" rx="3"/><rect x="94" y="74" width="18" height="16" rx="3"/><rect x="118" y="74" width="18" height="16" rx="3"/>
+            </g>
+            <rect x="70" y="74" width="18" height="16" rx="3" fill="#2447d6"/>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="step"><b>4</b>STEP 4</span>
+          <h3>날짜 예약</h3>
+          <p>편하신 날짜와 시간을 정하면 예약이 확정돼요.</p>
+          <div class="foot"><a class="icon-btn" href="#consult" aria-label="예약 문의">→</a></div>
+        </div>
+      </article>
+      <article class="pcard rv d1">
+        <div class="panel g5">
+          <svg viewBox="0 0 200 140" aria-hidden="true" fill="none" stroke-linecap="round">
+            <rect x="18" y="112" width="164" height="14" rx="5" fill="#93c5fd"/>
+            <rect x="28" y="40" width="28" height="14" rx="2" fill="#e8735a"/><rect x="62" y="40" width="28" height="14" rx="2" fill="#f08e74"/>
+              <rect x="28" y="60" width="14" height="14" rx="2" fill="#d9604a"/><rect x="48" y="60" width="28" height="14" rx="2" fill="#f7b5a3"/>
+              <rect x="28" y="80" width="28" height="14" rx="2" fill="#e8735a"/>
+            <path d="M160 28l-42 42" stroke="#1e2f8f" stroke-width="7"/>
+            <rect x="140" y="16" width="28" height="16" rx="4" fill="#1e2f8f" transform="rotate(45 154 24)"/>
+            <path d="M100 70l5-6" stroke="#fff" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="step"><b>5</b>STEP 5</span>
+          <h3>방문 작업</h3>
+          <p>약속한 날 찾아가 철거와 원상복구를 진행해요.</p>
+          <div class="foot"><a class="icon-btn" href="#consult" aria-label="상담하기">→</a></div>
+        </div>
+      </article>
+      <article class="pcard rv d2">
+        <div class="panel g6">
+          <svg viewBox="0 0 200 140" aria-hidden="true" fill="none" stroke-linecap="round">
+            <rect x="18" y="112" width="164" height="14" rx="5" fill="#93c5fd"/>
+            <rect x="48" y="36" width="104" height="76" rx="8" fill="#eef8ff"/>
+            <path d="M48 36h104" stroke="#1e2f8f" stroke-width="4"/>
+            <rect x="64" y="50" width="24" height="20" rx="4" fill="#fff"/>
+            <path d="M76 50v20M64 60h24" stroke="#93c5fd" stroke-width="2.5"/>
+            <rect x="96" y="78" width="16" height="34" rx="3" fill="#2447d6"/>
+            <circle cx="158" cy="30" r="14" fill="#fff"/>
+            <path d="M151 30l5 5 10-11" fill="none" stroke="#2447d6" stroke-width="3.5"/>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="step"><b>6</b>STEP 6</span>
+          <h3>마무리 확인</h3>
+          <p>작업이 끝나면 함께 확인하고 마무리해요.</p>
+          <div class="foot"><a class="icon-btn" href="#consult" aria-label="상담하기">→</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="how-foot rv">
+      <p class="hf-txt"><span>번거로운 일은 저희에게 맡겨 주세요.</span><strong>철거는 저희가 해드릴께요.</strong></p>
+      <div class="foot-btns">
+        <button type="button" class="btn btn-dark">카톡으로 상담하기 <span class="ar">→</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST -->
+<section class="d-cost" id="cost">
+  <div class="w">
+    <div class="cost-box rv">
+      <svg class="ci" viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-linecap="round">
+        <circle cx="60" cy="60" r="56" fill="#dbeafe"/>
+        <rect x="28" y="34" width="64" height="52" rx="8" fill="#fff" stroke="#1e2f8f" stroke-width="4"/>
+        <path d="M28 48h64" stroke="#1e2f8f" stroke-width="3"/>
+        <path d="M40 64h24M40 74h16" stroke="#93c5fd" stroke-width="4"/>
+        <circle cx="86" cy="86" r="16" fill="#2447d6"/>
+        <path d="M86 80v12M80 86h12" stroke="#fff" stroke-width="3"/>
+      </svg>
+      <div>
+        <h2 class="h-m">비용 안내</h2>
+        <p>비용은 작업 내용·현장·지역에 따라 달라져요.<br>카톡으로 사진과 지역을 보내 주시면 확인 후 비용과 가능한 날짜를 안내해 드려요.</p>
+        <div class="chips"><span>작업 내용</span><span>현장</span><span>지역</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="w">
+    <div>
+      <h2 class="h-l rv">자주 묻는 질문</h2>
+      <p class="lead rv d1" style="margin-top:14px">궁금한 점은 카톡으로 편하게 물어봐 주세요.</p>
+    </div>
+    <div class="acc rv d1">
+      <details open><summary>비용은 어떻게 알 수 있나요?</summary><p>카톡으로 현장 사진과 지역을 보내 주시면 확인 후 비용과 가능한 날짜를 안내해 드려요.</p></details>
+      <details><summary>어떤 일을 맡길 수 있나요?</summary><p>인테리어 철거부터 건물 완파, 원상복구, 남은 짐 처리까지 상담해 드려요. 가게·사무실을 비울 때 맡겨 주세요.</p></details>
+      <details><summary>청소나 다른 일도 같이 맡길 수 있나요?</summary><p>네, 철거와 함께 청소나 짐 정리, 옮기는 일도 필요하시면 한 번에 상담해 드려요.</p></details>
+      <details><summary>어떻게 신청하나요?</summary><p>카톡으로 사진과 지역을 보내 주시면 돼요. 확인 후 비용과 날짜를 안내해 드려요.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER SERVICES -->
+<section class="d-other" id="svc">
+  <div class="w">
+    <div class="sec-head">
+      <h2 class="h-l rv">다른 서비스도 함께 살펴보세요</h2>
+    </div>
+    <div class="svc-grid">
+      <a class="svc-card rv" href="clean.html">
+        <h3>청소해드릴께요</h3>
+        <p>
+          <span class="ln">원룸·오피스텔 등 거주지</span>
+          <span class="ln">꾸준히 또는 한 번만.</span>
+        </p>
+        <div class="ill"><svg viewBox="0 0 170 120" aria-label="청소 일러스트">
+          <rect x="18" y="96" width="150" height="30" rx="6" fill="#dbeafe"/>
+          <path d="M62 30h26l6 16v58a8 8 0 0 1-8 8H64a8 8 0 0 1-8-8V46z" fill="#2447d6"/>
+          <rect x="64" y="14" width="22" height="18" rx="4" fill="#1e2f8f"/>
+          <path d="M86 18h18l6 6-6 4H86z" fill="#1e2f8f"/>
+          <rect x="64" y="58" width="22" height="30" rx="4" fill="#93c5fd"/>
+          <g fill="#38bdf8"><circle cx="122" cy="22" r="4"/><circle cx="132" cy="34" r="3"/><circle cx="120" cy="40" r="2.5"/></g>
+          <path d="M140 54v62" stroke="#1e2f8f" stroke-width="6"/>
+          <path d="M122 104h38l6 14h-50z" fill="#60a5fa"/>
+          <path d="M30 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#7dd3fc"/>
+        </svg></div>
+      </a>
+      <a class="svc-card rv d1" href="deul.html">
+        <h3>덜어드릴께요</h3>
+        <p>안 쓰는 짐과 물품, 정리해서 깔끔하게 덜어 드려요.</p>
+        <div class="ill"><svg viewBox="0 0 170 120" aria-label="짐 정리 일러스트">
+          <rect x="18" y="96" width="150" height="30" rx="6" fill="#dbeafe"/>
+          <rect x="30" y="56" width="52" height="44" rx="4" fill="#60a5fa"/>
+          <path d="M30 70h52" stroke="#1e2f8f" stroke-width="3"/><rect x="50" y="56" width="12" height="14" fill="#bfdbfe"/>
+          <rect x="40" y="22" width="40" height="34" rx="4" fill="#93c5fd"/>
+          <path d="M40 34h40" stroke="#2447d6" stroke-width="3"/>
+          <path d="M96 66h44a8 8 0 0 1 8 8v22H90V74a8 8 0 0 1 6-8z" fill="#2447d6"/>
+          <rect x="86" y="80" width="68" height="16" rx="6" fill="#1e2f8f"/>
+          <path d="M96 96v10M144 96v10" stroke="#1e2f8f" stroke-width="5"/>
+          <path d="M112 30h30m-10-10 10 10-10 10" fill="none" stroke="#38bdf8" stroke-width="6"/>
+        </svg></div>
+      </a>
+      <a class="svc-card rv d2" href="move.html">
+        <h3>옮겨드릴께요</h3>
+        <p>무거운 물품을 다른 곳으로 옮겨 드려요.</p>
+        <div class="ill"><svg viewBox="0 0 170 120" aria-label="짐 옮기기 일러스트">
+          <rect x="8" y="100" width="162" height="26" rx="6" fill="#dbeafe"/>
+          <rect x="20" y="36" width="88" height="58" rx="6" fill="#2447d6"/>
+          <path d="M108 52h30l18 22v20h-48z" fill="#1e2f8f"/>
+          <path d="M116 58h20l12 15h-32z" fill="#bae6fd"/>
+          <rect x="32" y="48" width="30" height="22" rx="3" fill="#93c5fd"/>
+          <rect x="66" y="54" width="28" height="16" rx="3" fill="#60a5fa"/>
+          <circle cx="46" cy="98" r="12" fill="#0f1729"/><circle cx="46" cy="98" r="5" fill="#cbd5e1"/>
+          <circle cx="134" cy="98" r="12" fill="#0f1729"/><circle cx="134" cy="98" r="5" fill="#cbd5e1"/>
+          <path d="M2 50h12M0 64h10M4 78h10" stroke="#7dd3fc" stroke-width="4"/>
+        </svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="consult">
+  <div class="w">
+    <div class="fbox rv">
+      <svg class="deco" viewBox="0 0 300 300" aria-hidden="true">
+        <rect x="70" y="80" width="150" height="150" rx="30" fill="#ffffff22" transform="rotate(14 145 155)"/>
+        <rect x="130" y="40" width="110" height="110" rx="24" fill="#ffffff30" transform="rotate(-10 185 95)"/>
+        <path d="M150 170l25 25 55-60" fill="none" stroke="#fff" stroke-width="16"/>
+      </svg>
+      <h2>철거는 저희가<br>해드릴께요.</h2>
+      <div class="cta-row">
+        <button type="button" class="btn btn-dark">카톡으로 상담하기 <span class="ar">→</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fin">
+    <div class="fdark">
+      <div><div class="big">덜어드림</div><div class="tg">고생을 덜어드립니다</div></div>
+      <div class="fcols">
+        <div><h4>서비스</h4><a href="clean.html">청소해드릴께요</a><a href="deul.html">덜어드릴께요</a><a href="move.html">옮겨드릴께요</a><a href="chul.html">철거해드릴께요</a></div>
+        <div><h4>이용 안내</h4><a href="#how">신청 방법</a><a href="#faq">자주 묻는 질문</a></div>
+        <div><h4>상담</h4><a href="#consult">카톡 상담</a></div>
+      </div>
+    </div>
+    <div class="fbot"><span>© 2026 덜어드림. All rights reserved.</span><span>사업자 정보 자리</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var shot=/[?&]shot=1/.test(location.search);
+  if(shot) document.documentElement.classList.add('shot');
+  var hd=document.getElementById('hd');
+  function onS(){hd.classList.toggle('solid',window.scrollY>40)}
+  onS();window.addEventListener('scroll',onS,{passive:true});
+  var els=document.querySelectorAll('.rv');
+  if(shot||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
