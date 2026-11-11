@@ -123,8 +123,15 @@ header .btn-dark:hover{background:#fff;box-shadow:0 8px 20px #0f172933}
 .pcard.big .btn{align-self:flex-start;margin-top:auto}
 .panel{position:relative;border-radius:12px;min-height:190px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:22px}
 .pcard:not(.big) .panel{margin-bottom:18px}
+.pgrid .pcard:nth-of-type(odd) .body{order:-1;flex:none}
+.pgrid .pcard:nth-of-type(odd) .panel{margin-bottom:0;margin-top:18px;flex:1}
 .pcard.big .panel{min-height:340px}
 .panel svg{width:100%;max-width:240px;height:auto;position:relative;z-index:1}
+.plink{display:none;position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}
+.pgrid .panel::before,.pgrid .panel::after{content:"";position:absolute;background:#0f172955;z-index:2;pointer-events:none}
+.pgrid .panel::before{width:1px;top:0;bottom:0;left:16%}
+.pgrid .panel::after{height:1px;left:0;right:0;bottom:18%}
+
 .g1{background:linear-gradient(180deg,#a5f3fc 0%,#38bdf8 55%,#2563eb 100%)}
 .g2{background:linear-gradient(160deg,#c7d2fe,#818cf8)}
 .g3{background:linear-gradient(160deg,#d9f99d,#7dd3fc)}
@@ -226,12 +233,23 @@ footer{background:var(--paper);padding:0 0 26px}
   .proc-head{margin-bottom:34px}
   .sec-head{margin-bottom:28px}
   .sgrid3{grid-template-columns:1fr;gap:12px}
-  .pgrid{grid-template-columns:1fr;gap:16px}
-  .pcard.big{grid-column:1 / -1!important;display:flex;flex-direction:column;gap:0}
-  .pcard .body{order:-1}
-  .pcard .panel{min-height:170px;margin:16px 0 0!important}
+  .pgrid{grid-template-columns:1fr;gap:40px;position:relative}
+  .pgrid .pcard:nth-of-type(even){margin-top:-70px}
+  .pgrid .pcard:nth-of-type(odd):not(:first-of-type){margin-top:-50px}
+  .pgrid .pcard:not(.big){box-shadow:0 10px 26px #0f172914}
+  .pgrid .pcard{position:relative;z-index:1}
+  .plink{display:block}
+  .pcard.big{grid-column:1 / -1!important}
+  .pcard:not(.big){width:76%;justify-self:start}
+  .pgrid .pcard:not(.big):nth-of-type(even){justify-self:end}
+  .pcard,.pcard.big{grid-column:auto}
+  .pcard.big{display:flex;flex-direction:column;gap:0}
+  .pgrid .pcard:nth-of-type(odd) .body{order:-1}
+  .pgrid .pcard:nth-of-type(odd) .panel{min-height:170px;margin:16px 0 0!important}
+  .pgrid .pcard:nth-of-type(even) .panel{min-height:170px;margin:0 0 16px!important}
   .pcard .foot{display:none}
-  .pcard{padding:16px}
+  .pcard.big .btn{margin-top:0}
+  .pcard{flex-direction:column;padding:16px}
   .pcard h3{font-size:19px}
   .pcard p{max-width:none}
   .flow{display:grid;grid-template-columns:1fr;gap:6px;margin:-10px auto 26px;max-width:300px}
@@ -245,6 +263,145 @@ footer{background:var(--paper);padding:0 0 26px}
   .how-foot .btn{width:100%;justify-content:center}
   .fbot{padding:0 4px}
 }
+
+/* PC opt C — process layout (≥981). 721–980 is a 2-col adaptation. Mobile unchanged. */
+@media (min-width:721px){
+  .pgrid .panel::before,
+  .pgrid .panel::after{content:none!important;display:none!important}
+  .pgrid .pcard:nth-of-type(odd) .body{order:0;flex:1}
+  .pgrid .pcard:nth-of-type(odd) .panel{margin:0;flex:none}
+  .pgrid .pcard{position:relative;z-index:1}
+  .pgrid .pcard:hover{transform:none}
+  .pgrid .pcard p{max-width:none}
+  .pgrid .panel svg{max-width:100%;height:auto}
+  .pgrid .pcard h3{font-size:20px}
+  .pgrid .pcard p{margin-top:8px}
+  .pgrid .pcard .foot{justify-content:flex-end}
+}
+
+@media (min-width:981px){
+  .pgrid{
+    display:grid;
+    grid-template-columns:1.12fr 1fr 1fr;
+    grid-template-rows:1fr 1fr auto;
+    gap:20px;
+    position:relative;
+    align-items:stretch;
+  }
+  .pgrid .pcard{
+    display:flex;padding:16px;min-height:0;height:100%;
+  }
+  .pgrid .pcard:nth-of-type(1){
+    grid-column:1;grid-row:1 / span 2;flex-direction:column;
+  }
+  .pgrid .pcard:nth-of-type(1) .panel{
+    flex:1;min-height:0!important;margin:0 0 16px!important;padding:20px;
+  }
+  .pgrid .pcard:nth-of-type(1) .body{padding:2px 2px 0;flex:none}
+  .pgrid .pcard:nth-of-type(1) .foot{margin-top:14px;padding-top:0}
+
+  .pgrid .pcard:nth-of-type(2),
+  .pgrid .pcard:nth-of-type(3){
+    grid-column:2 / span 2;
+    flex-direction:row;align-items:stretch;gap:18px;
+    min-height:180px;
+  }
+  .pgrid .pcard:nth-of-type(2){grid-row:1}
+  .pgrid .pcard:nth-of-type(3){grid-row:2}
+  .pgrid .pcard:nth-of-type(2) .panel,
+  .pgrid .pcard:nth-of-type(3) .panel{
+    width:168px;min-width:168px;min-height:0!important;height:auto;
+    margin:0!important;flex:none;padding:14px;
+  }
+  .pgrid .pcard:nth-of-type(2) .body,
+  .pgrid .pcard:nth-of-type(3) .body{
+    padding:6px 2px 0;display:flex;flex-direction:column;flex:1;min-width:0;
+  }
+  .pgrid .pcard:nth-of-type(2) .foot,
+  .pgrid .pcard:nth-of-type(3) .foot{margin-top:auto;padding-top:10px}
+
+  .pgrid .pcard:nth-of-type(4){grid-column:1;grid-row:3}
+  .pgrid .pcard:nth-of-type(5){grid-column:2;grid-row:3}
+  .pgrid .pcard:nth-of-type(6){grid-column:3;grid-row:3}
+  .pgrid .pcard:nth-of-type(4),
+  .pgrid .pcard:nth-of-type(5),
+  .pgrid .pcard:nth-of-type(6){flex-direction:column}
+  .pgrid .pcard:nth-of-type(4) .panel,
+  .pgrid .pcard:nth-of-type(5) .panel,
+  .pgrid .pcard:nth-of-type(6) .panel{
+    height:132px;min-height:132px!important;margin:0 0 14px!important;flex:none;padding:12px;
+  }
+  .pgrid .pcard:nth-of-type(4) .body,
+  .pgrid .pcard:nth-of-type(5) .body,
+  .pgrid .pcard:nth-of-type(6) .body{
+    padding:2px 2px 0;display:flex;flex-direction:column;flex:1;
+  }
+  .pgrid .pcard:nth-of-type(4) h3,
+  .pgrid .pcard:nth-of-type(5) h3,
+  .pgrid .pcard:nth-of-type(6) h3{font-size:19px;min-height:26px}
+  .pgrid .pcard:nth-of-type(4) .foot,
+  .pgrid .pcard:nth-of-type(5) .foot,
+  .pgrid .pcard:nth-of-type(6) .foot{margin-top:auto;padding-top:12px;justify-content:flex-end}
+}
+
+@media (min-width:721px) and (max-width:980px){
+  .pgrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr auto auto;
+    gap:18px;
+    position:relative;
+    align-items:stretch;
+  }
+  .pgrid .pcard{
+    display:flex;padding:16px;min-height:0;height:100%;
+  }
+  .pgrid .pcard:nth-of-type(1){
+    grid-column:1;grid-row:1 / span 2;flex-direction:column;
+  }
+  .pgrid .pcard:nth-of-type(1) .panel{
+    flex:1;min-height:0!important;margin:0 0 14px!important;padding:16px;
+  }
+  .pgrid .pcard:nth-of-type(1) .body{padding:2px 2px 0;flex:none}
+  .pgrid .pcard:nth-of-type(1) .foot{margin-top:12px;padding-top:0}
+
+  /* 2–6: horizontal list cards so illustrations are not cropped in the 2-col width */
+  .pgrid .pcard:nth-of-type(2),
+  .pgrid .pcard:nth-of-type(3),
+  .pgrid .pcard:nth-of-type(4),
+  .pgrid .pcard:nth-of-type(5),
+  .pgrid .pcard:nth-of-type(6){
+    flex-direction:row;align-items:stretch;gap:14px;
+  }
+  .pgrid .pcard:nth-of-type(2){grid-column:2;grid-row:1}
+  .pgrid .pcard:nth-of-type(3){grid-column:2;grid-row:2}
+  .pgrid .pcard:nth-of-type(4){grid-column:1;grid-row:3}
+  .pgrid .pcard:nth-of-type(5){grid-column:2;grid-row:3}
+  .pgrid .pcard:nth-of-type(6){grid-column:1 / span 2;grid-row:4}
+  .pgrid .pcard:nth-of-type(2) .panel,
+  .pgrid .pcard:nth-of-type(3) .panel,
+  .pgrid .pcard:nth-of-type(4) .panel,
+  .pgrid .pcard:nth-of-type(5) .panel,
+  .pgrid .pcard:nth-of-type(6) .panel{
+    width:140px;min-width:140px;min-height:0!important;height:auto;
+    margin:0!important;flex:none;padding:12px;
+  }
+  .pgrid .pcard:nth-of-type(2) .body,
+  .pgrid .pcard:nth-of-type(3) .body,
+  .pgrid .pcard:nth-of-type(4) .body,
+  .pgrid .pcard:nth-of-type(5) .body,
+  .pgrid .pcard:nth-of-type(6) .body{
+    padding:4px 2px 0;display:flex;flex-direction:column;flex:1;min-width:0;
+  }
+  .pgrid .pcard:nth-of-type(2) .foot,
+  .pgrid .pcard:nth-of-type(3) .foot,
+  .pgrid .pcard:nth-of-type(4) .foot,
+  .pgrid .pcard:nth-of-type(5) .foot,
+  .pgrid .pcard:nth-of-type(6) .foot{margin-top:auto;padding-top:8px;justify-content:flex-end}
+  .pgrid .pcard:nth-of-type(4) h3,
+  .pgrid .pcard:nth-of-type(5) h3{font-size:19px}
+}
+
 </style>
 </head>
 <body>
@@ -745,6 +902,47 @@ footer{background:var(--paper);padding:0 0 26px}
   if(shot||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   els.forEach(function(e){io.observe(e)});
+})();
+</script>
+
+<script>
+(function(){
+  var g=document.querySelector('.pgrid');if(!g)return;
+  var NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg');svg.setAttribute('class','plink');svg.setAttribute('aria-hidden','true');
+  var path=document.createElementNS(NS,'path');path.setAttribute('fill','none');path.setAttribute('stroke','#0f172955');path.setAttribute('stroke-width','1');
+  svg.appendChild(path);g.insertBefore(svg,g.firstChild);
+  function draw(){
+    if(innerWidth>720){path.setAttribute('d','');return}
+    var gr=g.getBoundingClientRect(),cards=g.querySelectorAll('.pcard'),pts=[];
+    cards.forEach(function(c){
+      var p=c.querySelector('.panel'),pr=p.getBoundingClientRect(),cr=c.getBoundingClientRect(),cs=getComputedStyle(c);
+      var t=cs.transform;var dy=0;if(t&&t!=='none'){var m=t.match(/matrix\(([^)]+)\)/);if(m)dy=parseFloat(m[1].split(',')[5])||0}
+      pts.push({
+        xl:pr.left-gr.left+pr.width*.16,
+        xr:pr.left-gr.left+pr.width*.84,
+        top:cr.top-gr.top-dy,
+        bot:cr.bottom-gr.top-dy,
+        ptop:pr.top-gr.top-dy,
+        pbot:pr.bottom-gr.top-dy
+      });
+    });
+    var d='',r=12;
+    for(var i=0;i<pts.length-1;i++){
+      var a=pts[i],b=pts[i+1];
+      var my=(b.top+b.bot)/2;
+      var toRight=b.xl>a.xl;
+      var xStart=a.xl, xEnd=b.xl, xDrop=toRight?a.xl:a.xr, dir=toRight?1:-1;
+      if(Math.abs(xDrop-xStart)>1){
+        d+='M'+xStart+' '+a.pbot+' H'+xDrop+' ';
+      }else{
+        d+='M'+xStart+' '+a.pbot+' ';
+      }
+      var yEnd=Math.abs(my-b.ptop)<Math.abs(my-b.pbot)?b.ptop:b.pbot;
+      d+='V'+(my-r)+' Q'+xDrop+' '+my+' '+(xDrop+dir*r)+' '+my+' H'+(xEnd-dir*r)+' Q'+xEnd+' '+my+' '+xEnd+' '+(my<yEnd?my+r:my-r)+' V'+yEnd+' ';
+    }
+    path.setAttribute('d',d);
+  }
+  addEventListener('resize',draw);addEventListener('load',draw);setTimeout(draw,300);setTimeout(draw,1600);draw();
 })();
 </script>
 </body>

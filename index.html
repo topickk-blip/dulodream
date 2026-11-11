@@ -55,8 +55,8 @@ header.solid{background:#1e2f8fee;backdrop-filter:blur(10px);box-shadow:0 4px 20
 .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 /* keyword marquee (Remote: logo strip) */
 .marq{margin:70px auto 0;max-width:620px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
-.marq-in{display:flex;gap:40px;width:max-content;animation:mq 28s linear infinite}
-.marq span{font-weight:800;font-size:17px;color:#1e3a8acc;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.marq-in{display:flex;width:max-content;animation:mq 28s linear infinite}
+.marq span{font-weight:800;font-size:17px;color:#1e3a8acc;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;white-space:nowrap;margin-right:40px}
 .marq span::before{content:"";width:8px;height:8px;border-radius:3px;background:#2447d6;opacity:.6}
 @keyframes mq{to{transform:translateX(-50%)}}
 /* 4 service cards */
@@ -209,10 +209,8 @@ footer{background:#eaf7ff;padding:0 0 26px}
   .hero{padding:80px 0 30px}
   .mega{font-size:27vw}
   .hero-txt{margin-top:30px}
-  .marq{margin-top:44px;max-width:none;-webkit-mask:none;mask:none;padding:0 22px}
-  .marq-in{animation:none!important;width:auto;justify-content:space-between;gap:6px}
-  .marq-in span:nth-child(n+5){display:none}
-  .marq span{font-size:14.5px;gap:5px}
+  .marq{margin-top:44px;max-width:none}
+  .marq span{font-size:14.5px;gap:5px;margin-right:40px}
   .marq span::before{width:6px;height:6px}
   .svc{padding:36px 0 10px}
   .svc-grid{grid-template-columns:1fr;gap:14px}
@@ -291,8 +289,8 @@ footer{background:#eaf7ff;padding:0 0 26px}
     </div>
   </div>
   <div class="marq" aria-hidden="true"><div class="marq-in">
-    <span>정기 청소</span><span>1회 청소</span><span>짐 옮기기</span><span>가구 처리</span><span>전문 철거</span>
-    <span>정기 청소</span><span>1회 청소</span><span>짐 옮기기</span><span>가구 처리</span><span>전문 철거</span>
+    <span>정기 청소</span><span>물품 처리</span><span>짐 옮기기</span><span>전문 철거</span>
+    <span>정기 청소</span><span>물품 처리</span><span>짐 옮기기</span><span>전문 철거</span>
   </div></div>
 </section>
 
