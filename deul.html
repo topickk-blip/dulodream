@@ -340,6 +340,7 @@ button{font-family:inherit}
 .d-way{padding:90px 0 80px;background:linear-gradient(180deg,#f0faff,#fff)}
 .ways{display:grid;grid-template-columns:minmax(260px,.9fr) 1.6fr;gap:22px;align-items:stretch}
 .way-tabs{display:flex;flex-direction:column;gap:8px}
+@media (min-width:861px){.way-tabs{gap:10px}.way-tabs .wt{flex:1}}
 .wt{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:16px 16px;border:1px solid #dbeafe;border-radius:14px;background:#ffffffb3;cursor:pointer;color:var(--ink);transition:border-color .2s,background .2s,box-shadow .2s}
 .wt:hover{border-color:var(--b3)}
 .wt.on{background:#fff;border-color:var(--b7);box-shadow:0 0 0 3px #2447d614,0 10px 24px #1e40af14}
@@ -368,10 +369,12 @@ button{font-family:inherit}
 @media (max-width:720px){
   .d-way{padding:64px 0}
   .way-tabs{gap:6px}
-  .wt{padding:12px 12px;gap:10px;border-radius:12px}
-  .wi{width:34px;height:34px}
-  .wtx b{font-size:15.5px}
-  .wtx small{font-size:12.5px}
+  .wt{padding:8px 12px;gap:10px;border-radius:12px}
+  .wi{width:28px;height:28px;border-radius:8px}
+  .wi svg{width:16px;height:16px}
+  .wtx{gap:0}
+  .wtx b{font-size:15px;line-height:1.3}
+  .wtx small{font-size:12px;line-height:1.35}
   .wp{grid-template-columns:1fr}
   .wp-art{min-height:0;height:150px;padding:16px 30px 0}
   .wp-art svg{max-width:210px}
