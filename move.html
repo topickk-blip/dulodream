@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>옮겨드릴께요 | 덜어드림</title>
+<meta name="description" content="덜어드림 옮겨드릴께요. 무거운 물품을 다른 곳으로 옮겨 드려요. 카톡으로 사진과 지역을 보내 주시면 비용과 날짜를 안내해 드려요.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#0f1729; --ink2:#334155; --mut:#64748b; --line:#dbe4f0;
+  --b9:#1e2f8f; --b7:#2447d6; --b5:#3b82f6; --b3:#93c5fd; --sky:#bfe9ff; --ice:#eef8ff;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.w{max-width:1040px;margin:0 auto;padding:0 24px}
+.h-xl{font-size:clamp(34px,5.4vw,60px);font-weight:800;letter-spacing:-.035em;line-height:1.12}
+.h-l{font-size:clamp(28px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.18}
+.h-m{font-size:clamp(22px,2.4vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.25}
+.lead{font-size:clamp(15px,1.5vw,17px);color:var(--ink2);line-height:1.65;text-wrap:balance}
+.center{text-align:center}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:8px;font-weight:700;font-size:15px;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn .ar{transition:transform .2s}.btn:hover .ar{transform:translateX(3px)}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:#000;box-shadow:0 8px 20px #0f172933}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink);background:#ffffff80}.btn-line:hover{background:#fff}
+.btn-white{background:#fff;color:var(--ink)}.btn-ghost{border:1.5px solid #fff;color:#fff}
+.icon-btn{width:36px;height:36px;border-radius:8px;background:var(--ink);color:#fff;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:transform .2s}
+.icon-btn:hover{transform:translateX(3px)}
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+header.solid{background:#1e2f8fee;backdrop-filter:blur(10px);box-shadow:0 4px 20px #0f172922}
+.nav{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;gap:28px}
+.logo{font-weight:900;font-size:24px;letter-spacing:-.04em;color:#fff;display:flex;align-items:center;gap:8px}
+.logo i{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#7dd3fc,#fff);display:inline-block;transform:rotate(12deg)}
+.menu{display:flex;gap:26px;font-size:15px;font-weight:600;color:#fff}
+.menu a{opacity:.92}.menu a:hover{opacity:1}
+.menu .dd::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(45deg) translate(-2px,-2px);margin-left:8px}
+.nav-r{margin-left:auto;display:flex;align-items:center;gap:18px}
+.nav-r .btn{height:40px;padding:0 16px;font-size:14px}
+.burger{display:none;width:40px;height:40px;border-radius:8px;border:1.5px solid #ffffff99;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:16px;height:2px;background:#fff;position:relative;content:""}
+.burger span::before{position:absolute;top:-5px}.burger span::after{position:absolute;top:5px}
+/* hero */
+.hero{position:relative;padding:84px 0 40px;background:linear-gradient(180deg,#1e2f8f 0%,#2447d6 26%,#4f8ff3 44%,#a9e4ff 64%,#d9f4ff 84%,#f0faff 100%);overflow:hidden}
+.mega{font-weight:900;font-size:min(22vw,290px);letter-spacing:-.07em;line-height:.95;text-align:center;color:#d4f1ff;user-select:none;white-space:nowrap;margin-top:6px}
+.hero-txt{text-align:center;margin-top:clamp(36px,7vw,96px);position:relative}
+.hero-txt h1{color:var(--ink)}
+.hero-txt .lead{max-width:520px;margin:18px auto 30px;color:#1e293b}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* keyword marquee (Remote: logo strip) */
+.marq{margin:70px auto 0;max-width:620px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
+.marq-in{display:flex;gap:40px;width:max-content;animation:mq 28s linear infinite}
+.marq span{font-weight:800;font-size:17px;color:#1e3a8acc;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.marq span::before{content:"";width:8px;height:8px;border-radius:3px;background:#2447d6;opacity:.6}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* 4 service cards */
+.svc{padding:60px 0 20px;background:linear-gradient(180deg,#f0faff,#f7fcff)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc-card{position:relative;background:#ffffffcc;border:1px solid #dbeafe;border-radius:var(--r);padding:22px 20px 0;min-height:260px;overflow:hidden;box-shadow:0 1px 0 #fff inset,0 10px 30px #1e40af0d;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #1e40af1f}
+.svc-card h3{font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.3}
+.svc-card p{font-size:14.5px;color:var(--ink2);margin-top:10px;line-height:1.6}
+.svc-card p .ln{display:block}
+.svc-card .ill{margin-top:auto;margin-left:auto;margin-right:-6px;width:78%;max-width:170px}
+.svc-card .ill svg{width:100%;height:auto}
+/* statement */
+.state{padding:130px 0 140px;position:relative;background:#f7fcff;overflow:hidden}
+.state h2{max-width:760px;margin:0 auto;text-align:center;font-size:clamp(32px,6vw,68px);font-weight:900;letter-spacing:-.045em;line-height:1.12}
+.state h2 em{font-style:normal;background:linear-gradient(90deg,#2447d6,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tile{position:absolute;border-radius:16px;box-shadow:0 14px 30px #1d4ed833;display:flex;align-items:center;justify-content:center;animation:fl 6s ease-in-out infinite}
+.tile svg{width:55%;height:55%}
+@keyframes fl{50%{transform:translateY(-14px)}}
+/* process grid */
+.proc{padding:100px 0;background:#fff}
+.proc-head{max-width:620px;margin:0 auto 56px;text-align:center}
+.proc-head .lead{margin-top:16px}
+.flow{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:-26px 0 40px;list-style:none}
+.flow li{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--ink2);background:#f1f5ff;border:1px solid #dbe4ff;border-radius:999px;padding:7px 14px 7px 8px}
+.flow li b{width:22px;height:22px;border-radius:50%;background:var(--b7);color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center}
+.flow li+li::before{content:"→";color:var(--b5);margin:0 6px 0 -2px;font-weight:800}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s}
+.pcard:hover{box-shadow:0 18px 40px #0f172914;transform:translateY(-3px)}
+.pcard.big{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pcard .body{padding:6px 6px 4px;display:flex;flex-direction:column;flex:1}
+.step{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--b7);letter-spacing:.02em;margin-bottom:10px}
+.step b{width:26px;height:26px;border-radius:50%;background:var(--b7);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.pcard h3{font-size:21px;font-weight:800;letter-spacing:-.03em;line-height:1.3}
+.pcard p{font-size:15px;color:var(--ink2);margin-top:10px;max-width:280px}
+.pcard .foot{margin-top:auto;padding-top:18px;display:flex;justify-content:flex-end}
+.checks{list-style:none;margin:20px 0 26px;display:grid;gap:12px}
+.checks li{display:flex;gap:10px;font-size:14.5px;color:var(--ink2);align-items:flex-start}
+.checks li::before{content:"";flex:none;width:20px;height:20px;border-radius:5px;background:#eef2ff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%232447d6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat;margin-top:1px}
+.pcard.big .btn{align-self:flex-start;margin-top:auto}
+.panel{position:relative;border-radius:12px;min-height:190px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:22px}
+.pcard:not(.big) .panel{margin-bottom:18px}
+.pcard.big .panel{min-height:340px}
+.panel::before,.panel::after{content:"";position:absolute;background:#0f172955}
+.panel::before{width:1px;top:0;bottom:0;left:16%}
+.panel::after{height:1px;left:0;right:0;bottom:18%}
+.g1{background:linear-gradient(180deg,#a5f3fc 0%,#38bdf8 55%,#2563eb 100%)}
+.g2{background:linear-gradient(160deg,#c7d2fe,#818cf8)}
+.g3{background:linear-gradient(160deg,#d9f99d,#7dd3fc)}
+.g4{background:linear-gradient(160deg,#bae6fd,#3b82f6)}
+.g5{background:linear-gradient(160deg,#e0e7ff,#a5b4fc 60%,#60a5fa)}
+/* mini UI cards */
+.ui{position:relative;z-index:1;width:100%;max-width:300px;display:grid;gap:10px}
+.uc{background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 8px 22px #0f172926;font-size:13px;display:flex;align-items:center;gap:10px}
+.uc small{display:block;color:var(--mut);font-size:11px}
+.pill{margin-left:auto;font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px;background:#dbeafe;color:#1d4ed8;white-space:nowrap}
+.pill.ok{background:#bef264;color:#1a2e05}
+.ava{width:30px;height:30px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#fff;background:linear-gradient(135deg,#2447d6,#38bdf8)}
+.bub{max-width:82%;padding:9px 12px;border-radius:14px;font-size:13px;line-height:1.45;box-shadow:0 8px 20px #0f172920}
+.bub.me{justify-self:end;background:#fee500;color:#191600;border-top-right-radius:4px}
+.bub.you{justify-self:start;background:#fff;border-top-left-radius:4px}
+.phs{justify-self:end;display:flex;gap:6px}
+.ph{width:58px;height:58px;border-radius:10px;background:#fff;box-shadow:0 8px 20px #0f172920;padding:6px}
+.ph div{width:100%;height:100%;border-radius:6px}
+.line{height:8px;border-radius:4px;background:#e2e8f0}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px}
+.cal span{aspect-ratio:1;border-radius:6px;background:#f1f5f9;font-size:10px;display:flex;align-items:center;justify-content:center;color:#94a3b8}
+.cal span.on{background:#2447d6;color:#fff;font-weight:800}
+.bar{height:8px;border-radius:4px;background:#e2e8f0;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;width:70%;background:linear-gradient(90deg,#2447d6,#38bdf8);border-radius:4px}
+.bigw{display:none}
+.plink{display:none;position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}
+.ms{display:none}
+.tick{width:20px;height:20px;border-radius:50%;background:#2447d6;flex:none;display:flex;align-items:center;justify-content:center}
+.tick::after{content:"";width:8px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.tick.off{background:#e2e8f0}
+/* promise band (Remote: system of record + numbers) */
+.band{padding:110px 0 0;background:linear-gradient(180deg,#fff 0%,#dff3ff 30%,#9fd8ff 60%,#e8f6ff 100%)}
+.band .lead{max-width:540px;margin:16px auto 0}
+.chk-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin-top:30px;font-size:14px;font-weight:600;color:var(--ink2)}
+.chk-row span::before{content:"✓";color:var(--b7);font-weight:900;margin-right:8px}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);margin-top:90px;border-top:1px solid #0f172966}
+.col{padding:28px 18px 120px;border-right:1px solid #0f172940}
+.col:first-child{border-left:1px solid #0f172940}
+.col strong{display:block;font-size:clamp(30px,3.6vw,46px);font-weight:900;letter-spacing:-.045em;line-height:1.1}
+.col p{font-size:14.5px;color:var(--ink2);margin-top:14px;max-width:190px}
+/* situations (Remote: built for your team) */
+.sit{padding:110px 0 40px}
+.sit h2{max-width:520px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.scard{border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:box-shadow .3s}
+.scard:hover{box-shadow:0 14px 30px #0f172912}
+.scard h3{font-size:17px;font-weight:800;letter-spacing:-.02em}
+.scard p{font-size:14.5px;color:var(--ink2);margin:10px 0 18px;max-width:240px}
+.ul{font-size:14px;font-weight:700;border-bottom:1.5px solid var(--ink);padding-bottom:2px}
+/* reviews */
+.rev{padding:90px 0;background:linear-gradient(180deg,#fff,#eaf7ff)}
+.rev-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.rev-top .btn{height:40px;font-size:14px}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.rcard{background:#ffffffb3;border:1px solid #dbeafe;border-radius:var(--r);padding:22px;display:flex;flex-direction:column;min-height:280px}
+.rph{border:2px dashed #93c5fd;border-radius:12px;height:120px;display:flex;align-items:center;justify-content:center;color:#3b82f6;font-weight:700;font-size:14px;background:#f0f7ff}
+.rcard q{display:block;margin-top:16px;font-size:16px;font-weight:600;line-height:1.55;color:#94a3b8;quotes:none}
+.rcard small{margin-top:auto;padding-top:14px;color:var(--mut);font-size:13px}
+/* faq */
+.faq{padding:100px 0;background:#eaf7ff}
+.faq .w{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:start}
+.acc{display:grid;gap:10px}
+.acc details{background:#ffffffcc;border:1px solid #c7ddf7;border-radius:12px;padding:0 18px;transition:border-color .2s}
+.acc details[open]{border-color:var(--b7);background:#fff}
+.acc summary{list-style:none;cursor:pointer;padding:17px 0;font-weight:700;font-size:15.5px;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-size:22px;font-weight:400;line-height:1;transition:transform .2s}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc details p{padding:0 0 18px;font-size:14.5px;color:var(--ink2)}
+/* final cta */
+.final{padding:20px 0 70px;background:#eaf7ff}
+.fbox{border-radius:22px;padding:clamp(40px,6vw,72px) clamp(28px,6vw,72px);background:linear-gradient(135deg,#1e2f8f 0%,#2447d6 55%,#38bdf8 120%);color:#fff;position:relative;overflow:hidden}
+.fbox h2{font-size:clamp(32px,5vw,54px);font-weight:900;letter-spacing:-.04em;line-height:1.12;max-width:520px}
+.fbox .cta-row{justify-content:flex-start;margin-top:32px}
+.fbox .deco{position:absolute;right:-30px;bottom:-30px;width:300px;opacity:.9}
+/* footer */
+footer{background:#eaf7ff;padding:0 0 26px}
+.fin{max-width:1200px;margin:0 auto;padding:0 24px}
+.fdark{background:#0f1a3d;color:#cbd5e1;border-radius:20px;padding:48px 44px;display:grid;grid-template-columns:1.3fr 2fr;gap:30px}
+.fdark .big{font-weight:900;font-size:clamp(46px,7vw,84px);letter-spacing:-.06em;color:#fff;line-height:1}
+.fdark .tg{margin-top:12px;font-size:15px;color:#93c5fd}
+.fcols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fcols h4{color:#fff;font-size:14px;margin-bottom:12px}
+.fcols a{display:block;font-size:13.5px;padding:4px 0;color:#cbd5e1}.fcols a:hover{color:#fff}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--mut);margin-top:18px;padding:0 4px}
+/* reveal */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.marq-in,.tile{animation:none}}
+/* responsive */
+@media (max-width:980px){
+  .menu{display:none}.burger{display:inline-flex}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .pcard.big{grid-column:span 2}
+  .cols{grid-template-columns:1fr 1fr}.col{border-bottom:1px solid #0f172940;padding-bottom:50px}
+  .col:nth-child(3){border-left:1px solid #0f172940}
+  .fdark{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .w{padding:0 18px}
+  .nav{height:60px;padding:0 18px}.nav-r .login{display:none}
+  .hero{padding:80px 0 30px}
+  .mega{font-size:27vw}
+  .hero-txt{margin-top:30px}
+  .marq{margin-top:44px;max-width:none;-webkit-mask:none;mask:none;padding:0 22px}
+  .marq-in{animation:none!important;width:auto;justify-content:space-between;gap:6px}
+  .marq-in span:nth-child(n+5){display:none}
+  .marq span{font-size:14.5px;gap:5px}
+  .marq span::before{width:6px;height:6px}
+  .svc{padding:36px 0 10px}
+  .svc-grid{grid-template-columns:1fr;gap:14px}
+  .svc-card{min-height:230px;padding:22px 20px 0;border-radius:16px}
+  .svc-card h3{font-size:20px}
+  .svc-card p{font-size:14.5px;margin-top:8px;line-height:1.6}
+  .svc-card p .ln-desk{display:inline}
+  .svc-card p .ln-desk + .ln-desk::before{content:" "}
+  .svc-card .ill{width:58%;max-width:190px}
+  .state{padding:90px 0 100px}
+  .proc{padding:70px 0}
+  .proc-head{margin-bottom:34px}
+  .pgrid{grid-template-columns:1fr;gap:40px;position:relative}
+  .pgrid .pcard:not(.big)+.pcard:not(.big){margin-top:-70px}
+  .pgrid .pcard:not(.big){box-shadow:0 10px 26px #0f172914}
+  .pgrid .pcard{position:relative;z-index:1}
+  .plink{display:block}
+  .pcard.big{grid-column:1 / -1!important}
+  .pcard:not(.big){width:76%;justify-self:start}
+  .pgrid .pcard:not(.big):nth-of-type(odd){justify-self:end}
+  .pcard,.pcard.big{grid-column:auto}
+  .pcard.big{display:flex;flex-direction:column;gap:0}
+  .pcard .body{order:-1}
+  .pcard .panel{min-height:170px;margin:16px 0 0!important}
+  .pcard .foot{display:none}
+  .pcard.big .btn{margin-top:0}
+  .pcard{flex-direction:column;padding:16px}
+  .pcard h3{font-size:19px}
+  .flow{display:grid;grid-template-columns:1fr;gap:6px;margin:-10px auto 26px;max-width:300px}
+  .flow li+li::before{content:none}
+  .tile{width:40px!important;height:40px!important}
+  .state .t1{left:6%!important;top:24px!important}.state .t2{left:44%!important;top:14px!important}.state .t3{right:6%!important;top:34px!important}
+  .state .t4{left:10%!important;bottom:22px!important}.state .t5{right:12%!important;bottom:18px!important}
+  .pcard p{max-width:none}
+  .checks{margin:16px 0 20px}
+  .cols{margin-top:56px}.col{padding:22px 14px 40px}
+  .sgrid{grid-template-columns:1fr}
+  .rgrid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-18px;padding-right:18px;padding-bottom:6px}
+  .rcard{scroll-snap-align:start;min-height:230px}.rph{height:100px}
+  .rev-top{flex-direction:column;align-items:flex-start}
+  .faq .w{grid-template-columns:1fr;gap:24px}
+  .fbox .deco{width:180px;opacity:.35}
+  .fdark{padding:34px 24px}.fcols{grid-template-columns:1fr 1fr}
+}
+/* screenshot mode */
+.shot .rv{opacity:1!important;transform:none!important;transition:none!important}
+.shot .marq-in,.shot .tile{animation:none!important}
+
+/* ===== 덜어드릴께요 page ===== */
+.foot-btns{display:flex;gap:10px;flex-wrap:wrap}
+.foot-btns .btn{cursor:pointer;font-family:inherit}
+button{font-family:inherit}
+.hero-page{position:relative;padding:136px 0 0;background:linear-gradient(180deg,#2447d6 0%,#3566e6 22%,#4f8ff3 42%,#a9e4ff 66%,#f0faff 100%);overflow:hidden}
+.hero-page .hero-txt{margin-top:0}
+.hero-page h1{color:var(--ink)}
+.hero-page .lead{max-width:560px;margin:18px auto 28px;color:#1e293b}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:#fff;background:#ffffff26;border:1px solid #ffffff55;padding:6px 14px;border-radius:999px;margin-bottom:18px;backdrop-filter:blur(6px)}
+.kicker::before{content:"";width:8px;height:8px;border-radius:3px;background:#7dd3fc}
+.hero-ill{max-width:620px;margin:40px auto 0;padding:0 18px}
+.hero-ill svg{width:100%;height:auto}
+.eyebrow{display:inline-block;font-size:13.5px;font-weight:800;color:var(--b7);background:#eef6ff;border:1px solid #dbeafe;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.sec-head{max-width:620px;margin:0 auto 40px;text-align:center}
+.sec-head .lead{margin-top:14px}
+/* use cases */
+.d-use{padding:90px 0;background:#fff}
+.d-ugrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.d-ucard{border:1px solid var(--line);border-radius:var(--r);padding:20px 18px 18px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .3s,transform .3s;background:#fff}
+.d-ucard:hover{box-shadow:0 14px 30px #0f172912;transform:translateY(-3px)}
+.d-ucard .ic{height:96px;border-radius:12px;background:linear-gradient(160deg,#eef8ff,#dbeafe);display:flex;align-items:center;justify-content:center}
+.d-ucard .ic svg{height:76px;width:auto}
+.d-ucard h3{font-size:17px;font-weight:800;letter-spacing:-.02em}
+.d-ucard p{font-size:14px;color:var(--ink2);margin-top:-4px}
+/* cost */
+.d-cost{padding:20px 0 90px;background:#fff}
+.cost-box{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;border-radius:22px;padding:clamp(28px,4vw,44px);background:linear-gradient(135deg,#eef8ff,#dbeafe);border:1px solid #c7ddf7}
+.cost-box .ci{width:120px;height:120px}
+.cost-box h2{margin-bottom:12px}
+.cost-box p{font-size:clamp(15px,1.5vw,17px);color:var(--ink2);line-height:1.7}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:13.5px;font-weight:700;color:#1d4ed8;background:#fff;border:1px solid #c7d2fe;padding:6px 12px;border-radius:999px}
+/* steps */
+.d-how{padding:90px 0;background:linear-gradient(180deg,#fff,#f0faff)}
+.d-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;counter-reset:s;position:relative}
+.d-step{background:#fff;border:1px solid #dbeafe;border-radius:var(--r);padding:22px;box-shadow:0 10px 30px #1e40af0d;position:relative}
+.d-step .st{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--b7);margin-bottom:12px}
+.d-step .st b{width:28px;height:28px;border-radius:50%;background:var(--b7);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.d-step h3{font-size:19px;font-weight:800;letter-spacing:-.03em}
+.d-step p{font-size:14.5px;color:var(--ink2);margin-top:8px}
+.d-step .sa{height:110px;border-radius:12px;background:linear-gradient(160deg,#e0f2fe,#bfdbfe);margin-bottom:16px;display:flex;align-items:center;justify-content:center}
+.d-step .sa svg{height:84px;width:auto}
+.d-step:not(:last-child)::after{content:"";position:absolute;right:-14px;top:50%;width:10px;height:10px;border-top:2.5px solid var(--b5);border-right:2.5px solid var(--b5);transform:translateY(-50%) rotate(45deg);z-index:2}
+.how-foot{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:#fff;border:1px solid #dbeafe;border-radius:var(--r);padding:20px 22px}
+.how-foot p{font-size:15px;font-weight:700;color:var(--ink2)}
+/* other services */
+.d-other{padding:90px 0 70px;background:#eaf7ff}
+.d-other .svc-grid{grid-template-columns:repeat(3,1fr)}
+.d-other .svc-card{background:#fff}
+.faq{background:#f4fbff}
+@media (max-width:980px){
+  .d-ugrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .hero-page{padding:108px 0 0}
+  .kicker{font-size:13px}
+  .hero-ill{margin-top:28px}
+  .d-use,.d-how,.d-other{padding:64px 0}
+  .d-cost{padding:0 0 64px}
+  .sec-head{margin-bottom:28px}
+  .d-ugrid{gap:12px}
+  .d-ucard{padding:14px 14px 16px;gap:10px}
+  .d-ucard .ic{height:80px}.d-ucard .ic svg{height:62px}
+  .d-ucard h3{font-size:16px}.d-ucard p{font-size:13.5px}
+  .cost-box{grid-template-columns:1fr;gap:16px;text-align:left}
+  .cost-box .ci{width:84px;height:84px}
+  .d-steps{grid-template-columns:1fr;gap:22px}
+  .d-step:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%) rotate(135deg)}
+  .d-step .sa{height:96px}
+  .how-foot{flex-direction:column;align-items:stretch}
+  .how-foot .btn{width:100%;justify-content:center}
+  .foot-btns{flex-direction:column}
+  .d-other .svc-grid{grid-template-columns:1fr}
+}
+
+/* ways: tab list + panel (Remote style) */
+.d-way{padding:90px 0 80px;background:linear-gradient(180deg,#f0faff,#fff)}
+.ways{display:grid;grid-template-columns:minmax(260px,.9fr) 1.6fr;gap:22px;align-items:stretch}
+.way-tabs{display:flex;flex-direction:column;gap:8px}
+@media (min-width:861px){
+  .ways{align-items:stretch}
+  .way-tabs{gap:10px;height:100%;align-self:stretch}
+  .way-tabs .wt{flex:1 1 0;min-height:0}
+  .way-panels{height:100%;align-self:stretch;display:flex;flex-direction:column}
+  .way-panels .wp.on{flex:1;height:100%;min-height:100%}
+}
+.wt{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:16px 16px;border:1px solid #dbeafe;border-radius:14px;background:#ffffffb3;cursor:pointer;color:var(--ink);transition:border-color .2s,background .2s,box-shadow .2s}
+.wt:hover{border-color:var(--b3)}
+.wt.on{background:#fff;border-color:var(--b7);box-shadow:0 0 0 3px #2447d614,0 10px 24px #1e40af14}
+.wn{font-size:12.5px;font-weight:800;color:#94a3b8;letter-spacing:.04em;flex:none;width:20px}
+.wt.on .wn{color:var(--b7)}
+.wi{width:38px;height:38px;border-radius:10px;background:#eef2ff;color:var(--b7);display:flex;align-items:center;justify-content:center;flex:none;transition:background .2s,color .2s}
+.wi svg{width:20px;height:20px}
+.wt.on .wi{background:var(--b7);color:#fff}
+.wtx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.wtx b{font-size:16.5px;font-weight:800;letter-spacing:-.025em}
+.wtx small{font-size:13px;color:var(--mut);font-weight:600}
+.way-panels{position:relative;border:1px solid #dbeafe;border-radius:var(--r);background:#fff;box-shadow:0 10px 30px #1e40af0d;overflow:hidden}
+.wp{display:none;grid-template-columns:1fr 1.1fr;height:100%}
+.wp.on{display:grid;animation:wpIn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes wpIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.wp-art{background:linear-gradient(160deg,#e0f2fe,#bfdbfe);display:flex;align-items:flex-end;justify-content:center;padding:30px 24px 0;min-height:260px}
+.wp-art svg{width:100%;max-width:260px;height:auto}
+.wp-tx{padding:28px 28px 26px;display:flex;flex-direction:column}
+.wp-no{font-size:12.5px;font-weight:800;color:var(--b7)}
+.wp-tx h3{font-size:clamp(22px,2.4vw,26px);font-weight:800;letter-spacing:-.03em;margin-top:8px}
+.wp-tx p{font-size:15px;color:var(--ink2);margin-top:10px}
+.wp-tx .checks{margin:18px 0 0}
+@media (max-width:860px){
+  .ways{grid-template-columns:1fr;gap:14px}
+}
+@media (max-width:720px){
+  .d-way{padding:64px 0}
+  .way-tabs{gap:6px}
+  .wt{padding:8px 12px;gap:10px;border-radius:12px}
+  .wi{width:28px;height:28px;border-radius:8px}
+  .wi svg{width:16px;height:16px}
+  .wtx{gap:0}
+  .wtx b{font-size:15px;line-height:1.3}
+  .wtx small{font-size:12px;line-height:1.35}
+  .wp{grid-template-columns:1fr}
+  .wp-art{min-height:0;height:150px;padding:16px 30px 0}
+  .wp-art svg{max-width:210px}
+  .wp-tx{padding:20px 18px 22px}
+}
+.shot .wp.on{animation:none}
+.how-foot .hf-txt{display:flex;flex-direction:column;gap:2px}
+.how-foot .hf-txt span{font-size:14.5px;font-weight:600;color:var(--ink2)}
+.how-foot .hf-txt strong{font-size:16.5px;font-weight:800;color:var(--b7);letter-spacing:-.02em}
+.d-after{padding:0;background:#fff}
+.after-box{display:flex;align-items:center;gap:20px;border:1px solid #dbeafe;border-radius:var(--r);padding:22px 26px;background:linear-gradient(135deg,#f0f7ff,#fff);box-shadow:0 10px 30px #1e40af0d}
+.after-ic{width:56px;height:56px;flex:none}
+.after-tx{flex:1;min-width:0}
+.after-tx h3{font-size:19px;font-weight:800;letter-spacing:-.03em}
+.after-tx p{font-size:15px;color:var(--ink2);margin-top:4px}
+@media (max-width:720px){
+  .d-after{padding:0}
+  .after-box{flex-direction:column;align-items:flex-start;gap:12px;padding:20px 18px}
+  .after-ic{width:48px;height:48px}
+  .after-tx h3{font-size:18px}.after-tx p{font-size:14.5px}
+  .after-box .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="nav">
+    <a class="logo" href="index.html"><i></i>덜어드림</a>
+    <nav class="menu">
+      <a class="dd" href="index.html#svc">서비스</a>
+      <a href="index.html#proc">신청 방법</a>
+      <a href="index.html#faq">자주 묻는 질문</a>
+    </nav>
+    <div class="nav-r">
+      <a class="btn btn-white" href="#consult">카톡 상담 <span class="ar">→</span></a>
+      <a class="burger" href="index.html#svc" aria-label="메뉴"><span></span></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-page" id="top">
+  <div class="w hero-txt">
+    <span class="kicker rv">무거운 건 저희가</span>
+    <h1 class="h-xl rv">옮겨드릴께요</h1>
+    <p class="lead rv d1">무거운 물품을 다른 곳으로 옮겨 드리는 서비스예요.</p>
+    <div class="cta-row rv d2">
+      <a class="btn btn-dark" href="#how">신청 방법 보기 <span class="ar">→</span></a>
+      <a class="btn btn-line" href="#cost">비용 안내</a>
+    </div>
+  </div>
+  <div class="hero-ill rv d3">
+    <svg viewBox="0 0 620 300" aria-label="물품을 트럭으로 옮겨 드리는 일러스트" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="310" cy="284" rx="200" ry="12" fill="#bfe3ff" stroke="none"/>
+      <path d="M48 128h32M36 156h28M50 184h30" stroke="#7dd3fc" stroke-width="6"/>
+      <path d="M74 72l3.6 4.4 4.4 3.6 -4.4 3.6 -3.6 4.4 -4.4 -3.6 4.4 -3.6 3.6 -4.4z" fill="#ffffffcc" stroke="none"/>
+      <path d="M86 30l2.7 3.3 3.3 2.7 -3.3 2.7 -2.7 3.3 -3.3 -2.7 3.3 -2.7 2.7 -3.3z" fill="#7dd3fc" stroke="none"/>
+      <path d="M548 48l3.2 3.9 3.9 3.2 -3.9 3.2 -3.2 3.9 -3.9-3.2 3.9-3.2 3.2-3.9z" fill="#38bdf8" stroke="none"/>
+      <path d="M70 250H500" stroke="#2447d6" stroke-width="4" stroke-dasharray="10 9" opacity=".4"/>
+
+      <rect x="128" y="100" width="236" height="120" rx="14" fill="#2447d6"/>
+      <!-- one sofa (front view) in the cargo -->
+      <rect x="176" y="86" width="22" height="108" rx="9" fill="#60a5fa"/>
+      <rect x="294" y="86" width="22" height="108" rx="9" fill="#60a5fa"/>
+      <rect x="188" y="80" width="116" height="52" rx="14" fill="#93c5fd"/>
+      <rect x="188" y="124" width="116" height="60" rx="14" fill="#dbeafe"/>
+      <path d="M227 124v60M265 124v60" stroke="#2447d6" stroke-width="3.5" opacity=".35"/>
+
+      <path d="M364 128h80l48 56v36H364z" fill="#1e2f8f"/>
+      <path d="M380 140h54l34 40H380z" fill="#bae6fd"/>
+      <circle cx="198" cy="234" r="28" fill="#0f1729"/><circle cx="198" cy="234" r="12" fill="#cbd5e1"/>
+      <circle cx="430" cy="234" r="28" fill="#0f1729"/><circle cx="430" cy="234" r="12" fill="#cbd5e1"/>
+
+      <path d="M520 118c40-16 78-8 90 22" stroke="#2447d6" stroke-width="6"/>
+      <path d="M596 116l20 24-34 4" stroke="#2447d6" stroke-width="6"/>
+      <path d="M552 202l3.6 4.4 4.4 3.6 -4.4 3.6 -3.6 4.4 -4.4 -3.6 4.4 -3.6 3.6 -4.4z" fill="#fff" stroke="none"/>
+    </svg>
+  </div>
+</section>
+
+<!-- WAYS (tab list) -->
+<section class="d-way" id="way">
+  <div class="w">
+    <div class="sec-head">
+      <span class="eyebrow rv">옮겨드릴께요</span>
+      <h2 class="h-l rv">원하시는 대로 옮겨 드려요</h2>
+      <p class="lead rv d1">고생은 저희가 덜어드릴께요. 편한 방법만 골라 주세요.</p>
+    </div>
+    <div class="ways rv">
+      <div class="way-tabs" role="tablist" aria-label="옮겨 드리는 방법">
+        <button type="button" class="wt on" role="tab" aria-selected="true" data-way="0">
+          <span class="wn">01</span><span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M7 20V9l5-4 5 4v11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 15h6M15 15l-2.5-2.5M15 15l-2.5 2.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="wtx"><b>자리만 바꿔드릴께요</b><small>침대·장롱·소파처럼 무거운 물품, 집 안에서 위치만 바꿔 드려요</small></span>
+        </button>
+        <button type="button" class="wt" role="tab" aria-selected="false" data-way="1">
+          <span class="wn">02</span><span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="11" height="11" rx="1.8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5h6m0 0-3-3m3 3-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="wtx"><b>다른 곳으로 옮겨드릴께요</b><small>무거운 물품을 원하시는 다른 곳으로 옮겨 드려요</small></span>
+        </button>
+        <button type="button" class="wt" role="tab" aria-selected="false" data-way="2">
+          <span class="wn">03</span><span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="10" width="8" height="7" rx="1.4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 20V10l5-4 5 4v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 20v-5h3v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="wtx"><b>사온 물품을 가져다 드릴께요</b><small>중고 거래나 매장에서 산 물품을 집까지 가져다 드려요</small></span>
+        </button>
+      </div>
+      <div class="way-panels">
+        <div class="wp on" role="tabpanel" data-panel="0">
+          <div class="wp-art"><svg viewBox="0 0 230 150" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="132" width="230" height="18" rx="6" fill="#bfdbfe"/>
+          <rect x="14" y="16" width="48" height="38" rx="5" fill="#fff"/>
+          <path d="M38 16v38M14 35h48" stroke="#93c5fd" stroke-width="3"/>
+          <!-- old place: dashed front sofa -->
+          <rect x="16" y="84" width="14" height="46" rx="5" fill="none" stroke="#2447d6" stroke-width="3" stroke-dasharray="5 4"/>
+          <rect x="82" y="84" width="14" height="46" rx="5" fill="none" stroke="#2447d6" stroke-width="3" stroke-dasharray="5 4"/>
+          <rect x="24" y="72" width="64" height="28" rx="8" fill="none" stroke="#2447d6" stroke-width="3" stroke-dasharray="5 4"/>
+          <rect x="24" y="98" width="64" height="26" rx="8" fill="none" stroke="#2447d6" stroke-width="3" stroke-dasharray="5 4"/>
+          <path d="M108 106h26m-8-8 8 8-8 8" fill="none" stroke="#2447d6" stroke-width="5"/>
+          <!-- new sofa -->
+          <rect x="142" y="76" width="16" height="54" rx="6" fill="#60a5fa"/>
+          <rect x="198" y="76" width="16" height="54" rx="6" fill="#60a5fa"/>
+          <rect x="150" y="64" width="56" height="30" rx="9" fill="#93c5fd"/>
+          <rect x="150" y="90" width="56" height="34" rx="9" fill="#dbeafe"/>
+          <path d="M169 90v34M187 90v34" stroke="#2447d6" stroke-width="2.5" opacity=".35"/>
+          <path d="M206 22l3 6.5 6.5 3-6.5 3-3 6.5-3-6.5-6.5-3 6.5-3z" fill="#38bdf8" stroke="none"/>
+        </svg></div>
+          <div class="wp-tx">
+            <span class="wp-no">01 · 집 안에서 위치만 바꿔 드려요</span>
+            <h3>자리만 바꿔드릴께요</h3>
+            <p>침대·장롱·소파처럼 무거운 물품, 집 안에서 위치만 바꿔 드려요.</p>
+            <ul class="checks"><li>집 안에서 위치만 이동해요</li><li>무거운 물품도 안전하게 옮겨 드려요</li><li>작업 전 사진으로 먼저 확인해요</li></ul>
+          </div>
+        </div>
+        <div class="wp" role="tabpanel" data-panel="1">
+          <div class="wp-art"><svg viewBox="0 0 230 150" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="132" width="230" height="18" rx="6" fill="#bfdbfe"/>
+          <path d="M8 78h16M6 94h14M10 110h14" stroke="#7dd3fc" stroke-width="4"/>
+          <rect x="24" y="54" width="118" height="70" rx="8" fill="#2447d6"/>
+          <!-- one sofa in cargo -->
+          <rect x="48" y="62" width="14" height="52" rx="5" fill="#60a5fa"/>
+          <rect x="104" y="62" width="14" height="52" rx="5" fill="#60a5fa"/>
+          <rect x="54" y="56" width="58" height="26" rx="8" fill="#93c5fd"/>
+          <rect x="54" y="78" width="58" height="30" rx="8" fill="#dbeafe"/>
+          <path d="M73 78v30M93 78v30" stroke="#2447d6" stroke-width="2.5" opacity=".35"/>
+          <path d="M142 70h38l26 28v26h-64z" fill="#1e2f8f"/>
+          <path d="M152 78h24l16 18h-40z" fill="#bae6fd"/>
+          <circle cx="58" cy="126" r="14" fill="#0f1729"/><circle cx="58" cy="126" r="6" fill="#cbd5e1"/>
+          <circle cx="176" cy="126" r="14" fill="#0f1729"/><circle cx="176" cy="126" r="6" fill="#cbd5e1"/>
+          <path d="M210 40l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#38bdf8"/>
+        </svg></div>
+          <div class="wp-tx">
+            <span class="wp-no">02 · 원하시는 다른 곳으로 옮겨 드려요</span>
+            <h3>다른 곳으로 옮겨드릴께요</h3>
+            <p>무거운 물품을 원하시는 다른 곳으로 옮겨 드려요.</p>
+            <ul class="checks"><li>원하시는 장소로 옮겨 드려요</li><li>사진과 지역을 먼저 확인해요</li><li>작업 환경에 맞춰 진행해요</li></ul>
+          </div>
+        </div>
+        <div class="wp" role="tabpanel" data-panel="2">
+          <div class="wp-art"><svg viewBox="0 0 230 150" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="132" width="230" height="18" rx="6" fill="#bfdbfe"/>
+          <rect x="10" y="70" width="62" height="62" rx="6" fill="#2447d6"/>
+          <path d="M6 70h70v12H6z" fill="#93c5fd"/>
+          <rect x="20" y="88" width="16" height="14" rx="2" fill="#bae6fd"/>
+          <rect x="44" y="88" width="16" height="14" rx="2" fill="#bae6fd"/>
+          <rect x="32" y="108" width="18" height="24" rx="3" fill="#1e2f8f"/>
+          <path d="M82 100h22m-8-8 8 8-8 8" fill="none" stroke="#2447d6" stroke-width="5"/>
+          <rect x="108" y="92" width="32" height="40" rx="5" fill="#60a5fa"/>
+          <path d="M108 104h32" stroke="#1e2f8f" stroke-width="3"/>
+          <rect x="118" y="96" width="12" height="8" rx="2" fill="#bae6fd"/>
+          <path d="M150 132V78l36-30 36 30v54z" fill="#93c5fd"/>
+          <path d="M146 80L186 46l40 34" fill="none" stroke="#1e2f8f" stroke-width="5"/>
+          <rect x="176" y="96" width="20" height="36" rx="3" fill="#2447d6"/>
+          <rect x="156" y="90" width="16" height="16" rx="3" fill="#fff"/>
+          <path d="M164 90v16M156 98h16" stroke="#93c5fd" stroke-width="2.5"/>
+          <path d="M48 24l2.8 6 6 2.8-6 2.8-2.8 6-2.8-6-6-2.8 6-2.8z" fill="#38bdf8" stroke="none"/>
+        </svg></div>
+          <div class="wp-tx">
+            <span class="wp-no">03 · 산 물품을 집까지 가져다 드려요</span>
+            <h3>사온 물품을 가져다 드릴께요</h3>
+            <p>중고 거래나 매장에서 산 물품을 집까지 가져다 드려요.</p>
+            <ul class="checks"><li>거래 장소나 매장에서 받아 드려요</li><li>집까지 가져다 드려요</li><li>사진으로 물품과 장소를 먼저 확인해요</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFTER: clean link -->
+<section class="d-after" id="after">
+  <div class="w">
+    <div class="after-box rv">
+      <svg class="after-ic" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="56" height="56" rx="16" fill="#2447d6" stroke="none"/>
+        <path d="M24 18h12l3 7v21a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4V25z" fill="#fff" stroke="none"/>
+        <path d="M26 12h9M36 12l5 3" stroke="#bae6fd" stroke-width="3"/>
+        <path d="M47 22l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#7dd3fc" stroke="none"/>
+      </svg>
+      <div class="after-tx">
+        <h3>옮기고 나서 청소도 필요하다면</h3>
+        <p>자리를 옮긴 뒤, 청소해드릴께요에서 깔끔하게 마무리해 드려요.</p>
+      </div>
+      <a class="btn btn-dark" href="clean.html">청소해드릴께요 보기 <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="d-use" id="use">
+  <div class="w">
+    <div class="sec-head">
+      <h2 class="h-l rv">이럴 때 불러 주세요</h2>
+      <p class="lead rv d1">혼자 들기 어려운 무거운 물품이 있을 때, 편하게 맡겨 주세요.</p>
+    </div>
+    <div class="d-ugrid">
+      <article class="d-ucard rv">
+        <div class="ic"><svg viewBox="0 0 100 80" aria-hidden="true">
+          <path d="M14 38L50 10l36 28v36H14z" fill="#2447d6"/><path d="M8 40L50 6l42 34" fill="none" stroke="#1e2f8f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="40" y="48" width="20" height="26" rx="3" fill="#bae6fd"/><rect x="22" y="44" width="12" height="12" rx="2" fill="#93c5fd"/><rect x="66" y="44" width="12" height="12" rx="2" fill="#93c5fd"/>
+        </svg></div>
+        <h3>집 안 자리 바꾸기</h3><p>침대·장롱·소파처럼 무거운 물품의 위치를 바꾸고 싶을 때</p>
+      </article>
+      <article class="d-ucard rv d1">
+        <div class="ic"><svg viewBox="0 0 100 80" aria-hidden="true">
+          <path d="M8 40l22-18 22 18v32H8z" fill="#2447d6"/>
+          <path d="M6 42L30 20l24 22" fill="none" stroke="#1e2f8f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="22" y="52" width="12" height="20" rx="2" fill="#bae6fd"/>
+          <path d="M58 34l22-18 22 18v38H58z" fill="#60a5fa"/>
+          <path d="M56 36L80 16l24 20" fill="none" stroke="#1e2f8f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="74" y="50" width="12" height="22" rx="2" fill="#bae6fd"/>
+          <path d="M46 48h10m0 0-6-6m6 6-6 6" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></div>
+        <h3>다른 곳으로 옮기기</h3><p>무거운 물품을 원하시는 다른 곳으로 옮겨야 할 때</p>
+      </article>
+      <article class="d-ucard rv d2">
+        <div class="ic"><svg viewBox="0 0 100 80" aria-hidden="true">
+          <rect x="8" y="36" width="36" height="36" rx="5" fill="#2447d6"/>
+          <path d="M8 50h36" stroke="#1e2f8f" stroke-width="3"/>
+          <rect x="16" y="42" width="10" height="8" rx="1.5" fill="#bae6fd"/>
+          <path d="M58 32l22-20 22 20v40H58z" fill="#60a5fa"/>
+          <path d="M56 34L80 12l24 22" fill="none" stroke="#1e2f8f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="74" y="48" width="12" height="24" rx="2" fill="#bae6fd"/>
+          <rect x="40" y="52" width="18" height="20" rx="3" fill="#93c5fd"/>
+        </svg></div>
+        <h3>사온 물품 가져오기</h3><p>중고 거래나 매장에서 산 물품을 집까지 가져와야 할 때</p>
+      </article>
+      <article class="d-ucard rv d3">
+        <div class="ic"><svg viewBox="0 0 100 80" aria-hidden="true">
+          <rect x="12" y="40" width="76" height="8" rx="3" fill="#1e2f8f"/><path d="M20 48v26M80 48v26" stroke="#1e2f8f" stroke-width="5" stroke-linecap="round"/>
+          <rect x="30" y="12" width="40" height="26" rx="4" fill="#2447d6"/><rect x="34" y="16" width="32" height="18" rx="2" fill="#bae6fd"/>
+          <rect x="44" y="38" width="12" height="3" fill="#2447d6"/>
+          <rect x="60" y="52" width="22" height="22" rx="3" fill="#60a5fa"/><path d="M60 60h22" stroke="#2447d6" stroke-width="2.5"/>
+        </svg></div>
+        <h3>사무실 자리 바꾸기</h3><p>사무실에서 무거운 물품의 자리를 바꾸고 싶을 때</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- COST -->
+<section class="d-cost" id="cost">
+  <div class="w">
+    <div class="cost-box rv">
+      <svg class="ci" viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="10" y="10" width="100" height="100" rx="28" fill="#2447d6"/>
+        <rect x="32" y="30" width="56" height="64" rx="8" fill="#fff"/>
+        <path d="M42 48h36M42 60h36M42 72h22" stroke="#93c5fd" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="86" cy="86" r="18" fill="#38bdf8"/><path d="M78 86l6 6 10-11" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <h2 class="h-m">비용 안내</h2>
+        <p>비용은 물품 종류·양·지역·작업 환경에 따라 달라져요.<br>카톡으로 사진과 지역을 보내 주시면 확인 후 비용과 가능한 날짜를 안내해 드려요.</p>
+        <div class="chips"><span>물품 종류</span><span>양</span><span>지역</span><span>작업 환경</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="d-how" id="how">
+  <div class="w">
+    <div class="sec-head">
+      <span class="eyebrow rv">신청 방법</span>
+      <h2 class="h-l rv">옮겨 드리는 세 단계</h2>
+      <p class="lead rv d1">카톡으로 사진만 보내 주세요. 그다음 수고는 저희 몫이에요.</p>
+    </div>
+    <ol class="d-steps">
+      <li class="d-step rv">
+        <div class="sa"><svg viewBox="0 0 120 90" aria-hidden="true">
+          <rect x="38" y="6" width="44" height="78" rx="9" fill="#1e2f8f"/><rect x="42" y="14" width="36" height="58" rx="4" fill="#fff"/>
+          <rect x="46" y="20" width="28" height="20" rx="3" fill="#93c5fd"/><path d="M46 36l8-8 6 6 5-4 9 6v4H46z" fill="#2447d6"/>
+          <path d="M48 48h24M48 56h16" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="92" cy="22" r="12" fill="#38bdf8"/><path d="M92 16v12M86 22l6-6 6 6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></div>
+        <span class="st"><b>1</b>STEP</span>
+        <h3>카톡으로 사진·지역 보내기</h3>
+        <p>옮길 물품 사진과 지역을 카톡으로 보내 주시면 돼요.</p>
+      </li>
+      <li class="d-step rv d1">
+        <div class="sa"><svg viewBox="0 0 120 90" aria-hidden="true">
+          <rect x="22" y="12" width="76" height="66" rx="8" fill="#fff"/><rect x="22" y="12" width="76" height="16" rx="8" fill="#2447d6"/>
+          <g fill="#e2e8f0"><rect x="30" y="36" width="12" height="10" rx="2"/><rect x="46" y="36" width="12" height="10" rx="2"/><rect x="62" y="36" width="12" height="10" rx="2"/><rect x="78" y="36" width="12" height="10" rx="2"/><rect x="30" y="52" width="12" height="10" rx="2"/><rect x="62" y="52" width="12" height="10" rx="2"/><rect x="78" y="52" width="12" height="10" rx="2"/></g>
+          <rect x="46" y="52" width="12" height="10" rx="2" fill="#2447d6"/>
+          <circle cx="96" cy="70" r="14" fill="#38bdf8"/><path d="M89 70l5 5 9-10" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></div>
+        <span class="st"><b>2</b>STEP</span>
+        <h3>비용·날짜 안내</h3>
+        <p>확인 후 카톡으로 비용과 가능한 날짜를 안내해 드려요.</p>
+      </li>
+      <li class="d-step rv d2">
+        <div class="sa"><svg viewBox="0 0 120 90" aria-hidden="true">
+          <rect x="8" y="80" width="104" height="8" rx="4" fill="#93c5fd"/>
+          <rect x="28" y="28" width="52" height="42" rx="6" fill="#2447d6"/>
+          <path d="M28 44h52" stroke="#1e2f8f" stroke-width="3"/>
+          <rect x="42" y="36" width="24" height="10" rx="3" fill="#bae6fd"/>
+          <path d="M96 18l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#fff"/>
+          <path d="M86 58h16m0 0-8-8m8 8-8 8" fill="none" stroke="#1e2f8f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></div>
+        <span class="st"><b>3</b>STEP</span>
+        <h3>방문해 옮겨 드려요</h3>
+        <p>약속한 날 찾아가 무거운 물품을 옮겨 드려요.</p>
+      </li>
+    </ol>
+    <div class="how-foot rv">
+      <p class="hf-txt"><span>번거로운 일은 저희에게 맡겨 주세요.</span><strong>무거운 건 저희가 옮겨드릴께요.</strong></p>
+      <div class="foot-btns">
+        <button type="button" class="btn btn-dark">카톡으로 상담하기 <span class="ar">→</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="w">
+    <div>
+      <h2 class="h-l rv">자주 묻는 질문</h2>
+      <p class="lead rv d1" style="margin-top:14px">궁금한 점은 카톡으로 편하게 물어봐 주세요.</p>
+    </div>
+    <div class="acc rv d1">
+      <details open><summary>비용은 어떻게 알 수 있나요?</summary><p>카톡으로 물품 사진과 지역을 보내 주시면 확인 후 비용과 가능한 날짜를 안내해 드려요.</p></details>
+      <details><summary>어떤 물품을 옮겨 드리나요?</summary><p>혼자 들기 어려운 무거운 물품을 옮겨 드려요. 사진으로 먼저 확인한 뒤 안내해 드려요.</p></details>
+      <details><summary>집 안에서만 가능한가요?</summary><p>집 안에서 자리만 바꾸는 일과, 다른 곳으로 옮겨 드리는 일, 사온 물품을 가져다 드리는 일 모두 상담해 드려요.</p></details>
+      <details><summary>계단만 있는 집도 가능한가요?</summary><p>작업 환경은 사진과 함께 미리 여쭤보고, 가능한지와 비용을 안내해 드려요.</p></details>
+      <details><summary>청소나 덜어 드리는 일도 같이 맡길 수 있나요?</summary><p>네, 옮긴 뒤 청소가 필요하시거나 안 쓰는 물품을 덜고 싶으시면 함께 상담해 드려요.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER SERVICES -->
+<section class="d-other" id="svc">
+  <div class="w">
+    <div class="sec-head">
+      <h2 class="h-l rv">다른 서비스도 함께 살펴보세요</h2>
+    </div>
+    <div class="svc-grid">
+<a class="svc-card rv" href="clean.html">
+      <h3>청소해드릴께요</h3>
+      <p>
+        <span class="ln">원룸·오피스텔 등 거주지</span>
+        <span class="ln">꾸준히 또는 한 번만.</span>
+        <span class="ln ln-desk">기본청소 1시간,</span>
+        <span class="ln ln-desk">생활청소 2시간.</span>
+      </p>
+      <div class="ill"><svg viewBox="0 0 170 120" aria-label="청소 일러스트">
+        <rect x="18" y="96" width="150" height="30" rx="6" fill="#dbeafe"/>
+        <path d="M62 30h26l6 16v58a8 8 0 0 1-8 8H64a8 8 0 0 1-8-8V46z" fill="#2447d6"/>
+        <rect x="64" y="14" width="22" height="18" rx="4" fill="#1e2f8f"/>
+        <path d="M86 18h18l6 6-6 4H86z" fill="#1e2f8f"/>
+        <rect x="64" y="58" width="22" height="30" rx="4" fill="#93c5fd"/>
+        <g fill="#38bdf8"><circle cx="122" cy="22" r="4"/><circle cx="132" cy="34" r="3"/><circle cx="120" cy="40" r="2.5"/></g>
+        <path d="M140 54v62" stroke="#1e2f8f" stroke-width="6" stroke-linecap="round"/>
+        <path d="M122 104h38l6 14h-50z" fill="#60a5fa"/>
+        <path d="M30 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#7dd3fc"/>
+      </svg></div>
+    </a>
+<a class="svc-card rv d1" href="deul.html">
+      <h3>덜어드릴께요</h3>
+      <p>안 쓰는 짐과 물품, 정리해서 깔끔하게 덜어 드려요.</p>
+      <div class="ill"><svg viewBox="0 0 170 120" aria-label="짐 정리 일러스트">
+        <rect x="18" y="96" width="150" height="30" rx="6" fill="#dbeafe"/>
+        <rect x="30" y="56" width="52" height="44" rx="4" fill="#60a5fa"/>
+        <path d="M30 70h52" stroke="#1e2f8f" stroke-width="3"/><rect x="50" y="56" width="12" height="14" fill="#bfdbfe"/>
+        <rect x="40" y="22" width="40" height="34" rx="4" fill="#93c5fd"/>
+        <path d="M40 34h40" stroke="#2447d6" stroke-width="3"/>
+        <path d="M96 66h44a8 8 0 0 1 8 8v22H90V74a8 8 0 0 1 6-8z" fill="#2447d6"/>
+        <rect x="86" y="80" width="68" height="16" rx="6" fill="#1e2f8f"/>
+        <path d="M96 96v10M144 96v10" stroke="#1e2f8f" stroke-width="5" stroke-linecap="round"/>
+        <path d="M112 30h30m-10-10 10 10-10 10" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+    </a>
+<a class="svc-card rv d2" href="#">
+      <h3>철거해드릴께요</h3>
+      <p>인테리어 철거와 원상복구, 깔끔하게 마무리해요.</p>
+      <div class="ill"><svg viewBox="0 0 170 120" aria-label="철거 일러스트">
+        <rect x="18" y="100" width="150" height="26" rx="6" fill="#dbeafe"/>
+        <g fill="#60a5fa"><rect x="24" y="30" width="34" height="16" rx="2"/><rect x="62" y="30" width="34" height="16" rx="2"/>
+        <rect x="24" y="50" width="16" height="16" rx="2"/><rect x="44" y="50" width="34" height="16" rx="2"/>
+        <rect x="24" y="70" width="34" height="16" rx="2"/><rect x="24" y="90" width="16" height="10" rx="2"/><rect x="44" y="90" width="34" height="10" rx="2"/></g>
+        <g fill="#93c5fd"><rect x="92" y="88" width="16" height="12" rx="2" transform="rotate(-14 100 94)"/><rect x="112" y="92" width="12" height="9" rx="2" transform="rotate(20 118 96)"/></g>
+        <path d="M150 20l-46 46" stroke="#1e2f8f" stroke-width="8" stroke-linecap="round"/>
+        <rect x="128" y="6" width="34" height="18" rx="4" fill="#2447d6" transform="rotate(45 145 15)"/>
+        <path d="M90 50l6-6M96 62l8-2M86 40l2-8" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+      </svg></div>
+    </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="final" id="consult">
+  <div class="w">
+    <div class="fbox rv">
+      <svg class="deco" viewBox="0 0 300 300" aria-hidden="true">
+        <rect x="70" y="80" width="150" height="150" rx="30" fill="#ffffff22" transform="rotate(14 145 155)"/>
+        <rect x="130" y="40" width="110" height="110" rx="24" fill="#ffffff30" transform="rotate(-10 185 95)"/>
+        <path d="M150 170l25 25 55-60" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>무거운 건 저희가<br>옮겨드릴께요.</h2>
+      <div class="cta-row">
+        <button type="button" class="btn btn-dark">카톡으로 상담하기 <span class="ar">→</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fin">
+    <div class="fdark">
+      <div><div class="big">덜어드림</div><div class="tg">고생을 덜어드립니다</div></div>
+      <div class="fcols">
+        <div><h4>서비스</h4><a href="clean.html">청소해드릴께요</a><a href="deul.html">덜어드릴께요</a><a href="#top">옮겨드릴께요</a><a href="index.html#svc">철거해드릴께요</a></div>
+        <div><h4>이용 안내</h4><a href="#how">신청 방법</a><a href="#faq">자주 묻는 질문</a></div>
+        <div><h4>상담</h4><a href="#consult">카톡 상담</a></div>
+      </div>
+    </div>
+    <div class="fbot"><span>© 2026 덜어드림. All rights reserved.</span><span>사업자 정보 자리</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var shot=/[?&]shot=1/.test(location.search);
+  if(shot) document.documentElement.classList.add('shot');
+  var hd=document.getElementById('hd');
+  function onS(){hd.classList.toggle('solid',window.scrollY>40)}
+  onS();window.addEventListener('scroll',onS,{passive:true});
+  var els=document.querySelectorAll('.rv');
+  if(shot||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+(function(){var tabs=document.querySelectorAll('.wt'),ps=document.querySelectorAll('.wp');
+tabs.forEach(function(t){t.addEventListener('click',function(){var i=t.getAttribute('data-way');
+tabs.forEach(function(x){var on=x===t;x.classList.toggle('on',on);x.setAttribute('aria-selected',on?'true':'false')});
+ps.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-panel')===i)})})})})();
+</script>
+</body>
+</html>
