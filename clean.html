@@ -405,6 +405,23 @@ button{font-family:inherit}
   .sec-head{margin-bottom:28px}
   .d-other .svc-grid{grid-template-columns:1fr}
 }
+
+.how-sec{padding:90px 0 100px;background:#fff}
+.how-head{text-align:center;margin-bottom:44px}
+.how-head .eyebrow{display:inline-block;font-size:13.5px;font-weight:800;color:var(--b7);background:#eef6ff;border:1px solid #dbeafe;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.how-head p{color:var(--mut);margin-top:12px;font-size:16px}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:hs}
+.how-card{position:relative;background:linear-gradient(180deg,#f3faff,#fff);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px 24px;transition:box-shadow .3s,transform .3s}
+.how-card:hover{box-shadow:0 18px 40px #1e40af14;transform:translateY(-3px)}
+.how-card .num{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--b5),var(--b7));color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 8px 18px #2447d633}
+.how-card h3{font-size:19px;font-weight:800;letter-spacing:-.03em;line-height:1.35}
+.how-card p{font-size:15px;color:var(--ink2);margin-top:10px;line-height:1.6}
+.how-card.last{background:linear-gradient(160deg,#2447d6,#3b82f6);border-color:transparent}
+.how-card.last h3,.how-card.last p{color:#fff}
+.how-card.last .num{background:#fff;color:var(--b7)}
+.how-card:not(:last-child)::after{content:"";position:absolute;right:-12px;top:44px;width:8px;height:8px;border-top:2.5px solid var(--b3);border-right:2.5px solid var(--b3);transform:rotate(45deg);z-index:1}
+@media(max-width:900px){.how-grid{grid-template-columns:1fr 1fr}.how-card:nth-child(2)::after{display:none}}
+@media(max-width:560px){.how-sec{padding:64px 0 70px}.how-grid{grid-template-columns:1fr;gap:12px}.how-card::after{display:none}.how-card{display:grid;grid-template-columns:40px 1fr;column-gap:16px;padding:20px}.how-card .num{margin:0;grid-row:span 2}.how-card p{margin-top:6px}}
 </style>
 </head>
 <body>
@@ -517,7 +534,22 @@ button{font-family:inherit}
   </div>
 </section>
 
-
+<!-- HOW -->
+<section class="how-sec" id="how">
+  <div class="w">
+    <div class="how-head rv">
+      <span class="eyebrow">신청 방법</span>
+      <h2 class="h-l">카톡 한 번이면<br>청소가 시작돼요.</h2>
+      <p>번거로운 건 저희가 챙길께요.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card rv"><div class="num">1</div><h3>카톡으로 지역과<br>집 크기 보내기</h3><p>사는 지역과 원룸·오피스텔 같은 집 크기만 알려 주세요.</p></div>
+      <div class="how-card rv d1"><div class="num">2</div><h3>원하는 청소와<br>요일 정하기</h3><p>기본청소·생활청소 중에 고르고, 편한 요일을 정해요.</p></div>
+      <div class="how-card rv d2"><div class="num">3</div><h3>약속한 날<br>방문 청소</h3><p>정한 날 찾아가서 고른 항목대로 깨끗하게 청소해요.</p></div>
+      <div class="how-card last rv d3"><div class="num">4</div><h3>정기 청소로<br>꾸준히 이어가기</h3><p>같은 요일에 꾸준히 찾아가서 깨끗한 집을 지켜 드려요.</p></div>
+    </div>
+  </div>
+</section>
 
 <!-- OTHER SERVICES -->
 <section class="d-other" id="svc">
