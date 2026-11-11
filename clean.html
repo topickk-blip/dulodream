@@ -477,7 +477,6 @@ button{font-family:inherit}
           <p class="time-note">항목 하나에 20~30분 정도예요.</p>
           <div class="breakdown" id="breakdown">
             <div><span>정기</span><b>26,000원</b></div>
-            <div class="sum"><span>합계</span><b id="price-total">26,000원</b></div>
           </div>
         </div>
         <div class="picker-right">
@@ -574,14 +573,13 @@ button{font-family:inherit}
     sec.querySelector('[data-bind="name"]').textContent=p.name;
     sec.querySelector('[data-bind="include"]').textContent=p.include;
     sec.querySelector('[data-bind="kicker"]').textContent=reg?'정기':'1회';
-    sec.querySelector('[data-bind="main"]').textContent=won(base);
-    sec.querySelector('[data-bind="sub"]').textContent=reg?'1회 '+won(p.once):'정기 '+won(p.regular);
+    sec.querySelector('[data-bind="main"]').textContent=won(total);
+    sec.querySelector('[data-bind="sub"]').textContent=reg?'1회 '+won(p.once+pay):'정기 '+won(p.regular+pay);
     document.getElementById('pick-count').textContent=auto?'맡기기':n+' / '+p.include;
     var h=document.getElementById('pick-hint');
     h.textContent=auto?'매니저님이 집 상태를 보고 필요한 곳부터 챙겨 드려요.':n<p.include?p.include+'가지를 골라 주세요. 지금 '+n+'가지를 고르셨어요.':(ex?'항목 추가 '+ex+'개 · '+won(pay):p.include+'가지를 고르셨어요.');
     var l='<div><span>'+(reg?'정기':'1회')+'</span><b>'+won(base)+'</b></div>';
-    if(ex)l+='<div><span>항목 추가 '+ex+'개</span><b>'+won(pay)+'</b></div>';
-    l+='<div class="sum"><span>합계</span><b id="price-total">'+won(total)+'</b></div>';
+    if(ex){picked[plan].slice(p.include).forEach(function(id){var el=sec.querySelector('#task-list input[data-id="'+id+'"]');var nm=el?el.parentNode.querySelector('.task-name').textContent:'항목';l+='<div><span>'+nm+' 추가</span><b>'+won(EXTRA)+'</b></div>'})}
     document.getElementById('breakdown').innerHTML=l;
     document.getElementById('auto-opt').checked=auto;
   }
